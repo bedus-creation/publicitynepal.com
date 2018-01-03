@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-
+use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -25,13 +25,23 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'remember_token' => str_random(10),
 	];
 });
-
-$factory->define(App\Product::class,function(Faker $faker){
+$factory->define(App\Category::class,function(Faker $faker){
 	return [
-		'name'=>$faker->name,
+		"name"=>$faker->name
+	];
+});
+$factory->define(App\Post::class,function(Faker $faker){
+
+	$title = $faker->sentence;
+	$slug = Str::slug($title);
+
+	return [
+		'title'=>$title,
 		'user_id'=>function () {
 			return factory(App\User::class)->create()->id;
 		},
-		'price'=>rand(100,1000)
+		'slug'=>$slug,
+		'content'=>$faker->paragraph(20),
+		'featured_photo'=>$faker->imageUrl(800, 220, 'nature')
 	];
 });

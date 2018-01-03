@@ -8,9 +8,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace'=>'Backend','middleware'=>'auth:api'],function(){
-	Route::post('/create/product','ProductController@createPost');
+	Route::post('/create/post','PostController@createPost');
 
-	Route::post('/upload/image','ProductController@uploadImage');
+	Route::post('/upload/image','PostController@uploadImage');
 });
 Route::group(['namespace'=>'FrontEnd'],function(){
 

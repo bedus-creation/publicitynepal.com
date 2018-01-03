@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Post extends Model
 {
-    protected $table="products";
+    protected $table="posts";
 }

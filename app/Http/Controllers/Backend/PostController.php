@@ -4,24 +4,25 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;	
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Product;
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class PostController extends Controller
 {
 	public function index(Request $request){
-		$pots=Posts::orderBy('id', 'desc')
+		$pots=Post::orderBy('id', 'desc')
 		->limit(5)->get();
 		return response()->json(Posts::all());
 	}
 	public function createPost(Request $request){
-		$product =new Product;
+		$post =new Post;
 		try{
-			$product->name=$request->title;
-			$product->avatar=$request->featured_photo;
-			$product->price=$request->content;
-			$product->user_id=$request->user()->id;
-			if($product->save()){
+			$post->title=$request->title;
+			$post->slug=Str::slug($request->title);
+			$post->featured_photo=$request->featured_photo;
+			$post->content=$request->content;
+			$post->user_id=$request->user()->id;
+			if($post->save()){
 				echo "Post Created sucessfully  !";
 			}
 		}catch(\Exception $e){

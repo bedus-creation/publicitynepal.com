@@ -80,7 +80,7 @@ export default {
 			select_image.click();
 		},
 		create_post(){
-			this.$http.post('api/create/product',{
+			this.$http.post('api/create/post',{
 				title:this.title,
 				featured_photo:this.imageLink,
 				content:this.editorContent
