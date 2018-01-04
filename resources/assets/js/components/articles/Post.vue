@@ -20,7 +20,7 @@
 <script>
 export default {
 	created: function () {
-		this.post.content=this.trunk(this.post.post_content,100)
+		this.post.content=this.trunk(this.post.content,100)
 	},
 	methods:{
 		trunk:function(string,value){
