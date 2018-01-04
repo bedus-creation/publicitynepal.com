@@ -20,9 +20,10 @@ export default {
 	},
 
 	created(){
-		this.$http.get('api/products')
+		this.$http.get('/api/products')
 		.then(response=>{
 			this.products=response.body
+			console.log(response.body)
 		});
 	}
 
