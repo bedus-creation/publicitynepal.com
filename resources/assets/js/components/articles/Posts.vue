@@ -18,7 +18,6 @@ export default {
 	components:{
 		'Post':Post
 	},
-
 	created(){
 		this.$http.get('api/products')
 		.then(response=>{
