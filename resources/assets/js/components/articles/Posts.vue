@@ -20,10 +20,10 @@ export default {
 	},
 
 	created(){
-		axios.get('http://publicitynepal.com/api/products')
+		this.$http.get('api/products')
 		.then(response=>{
-			this.products=response.data
-			console.log(response.data)
+			this.products=response.body
+			console.log(response.body)
 		});
 	}
 
