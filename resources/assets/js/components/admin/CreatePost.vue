@@ -70,7 +70,7 @@ export default {
 				form.append('file', file);
 				self.$http.post('api/upload/image',form)
 				.then(response => { 
-					self.imageLink="http://localhost:8000/uploads/"+response.data;
+					self.imageLink="/uploads/"+response.data;
 					console.log(response.data);
 				})
 				.catch(error => {
