@@ -1,10 +1,7 @@
 <template>
 	<div class="header clearfix">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+		<nav class="navbar navbar-expand-sm  navbar-dark sticky-top">
 			<div class="container">
-				<router-link to="/" class="navbar-brand" >
-					<img src="/images/logo.png" width="100" height="30"/>
-				</router-link>
 				<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
