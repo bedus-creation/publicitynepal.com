@@ -17,24 +17,9 @@ import Vue from 'vue'
  Vue.use(VueResource)
  Vue.use(Auth)
 
- Vue.http.options.root='http://publicitynepal.com'
- Vue.http.headers.common['Authorization']='Bearer '+Vue.auth.getToken()
+Vue.http.options.root='http://publicitynepal.com'
+Vue.http.headers.common['Authorization']='Bearer '+Vue.auth.getToken()
 
- Router.beforeEach((to,from,next)=>{
- 	if(to.matched.some(record=>record.meta.forVisitors)){
- 		if(Vue.auth.isAuthenticated()){
- 			next({
- 				'path':'/admin'
- 			})
- 		}else next()
- 	}else if(to.matched.some(record=>record.meta.forAdmin)){
- 		if(! Vue.auth.isAuthenticated()){
- 			next({
- 				'path':'/login'
- 			})
- 		}else next()
- 	}else next()
- })
 
  const app = new Vue({
  	el: '#main',
