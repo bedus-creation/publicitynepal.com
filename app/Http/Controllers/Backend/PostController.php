@@ -23,11 +23,12 @@ class PostController extends Controller
 			$post->content=$request->content;
 			$post->user_id=$request->user()->id;
 			if($post->save()){
-				echo "Post Created sucessfully  !";
+				$request->session()->flash("","Post created Successfully");
 			}
 		}catch(\Exception $e){
 			return response()->json($e->getMessage());
 		}
+		return redirect()->back();
 
 	}
 	public function uploadImage(Request $request){

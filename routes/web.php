@@ -6,9 +6,14 @@ Route::post('/image',function(){
 	return "this is ok";
 });
 Route::group(['namespace'=>'Backend'],function(){
-
 	Route::get('/foo/{command}','CommandController@command');
 });
+Route::group(['namespace'=>'Backend','middleware'=>['auth','web']],function(){
+	Route::get('getfiles','MediaController@getFiles');
+	Route::post('media/upload','MediaController@upload');
+});
+
+
 
 Route::group(['prefix'=>'admin','namespace'=>'Backend', 'middleware' => ['auth','web']],function(){
 	Route::get('/','AdminController@index');

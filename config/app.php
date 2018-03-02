@@ -193,6 +193,7 @@ return [
     */
 
     'aliases' => [
+        'Str'      => 'Illuminate\Support\Str',
         'GraphQL' => Folklore\GraphQL\Support\Facades\GraphQL::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
