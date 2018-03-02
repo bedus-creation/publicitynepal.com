@@ -13,7 +13,7 @@ const router =new VueRouter({
 	linkActiveClass: 'is-active',
 	routes:[
 	{
-		path:'/Details/:title',
+		path:'/news/:slug',
 		component: ProductDetailPage,
 		props: true 
 	},

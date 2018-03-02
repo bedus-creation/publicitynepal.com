@@ -18,18 +18,15 @@
             </li>
             <li class="list-group-item">
                 <a class="d-flex flex-row justify-content-start" data-toggle="dropdown">
-                    <div class=""><i class="fa fa-map-marker"></i></div>
-                    <div class="pl-3" style="cursor: pointer;">&nbsp; Locations</div>
+                    <div class=""><i class="fa fa-pencil"></i></div>
+                    <div class="pl-3" style="cursor: pointer;">&nbsp; Post</div>
                 </a>
                 <div class="dropdown-menu bg-sidebar border p-0" aria-labelledby="dropdownMenu2">
-                    <a  href="{{url('admin/location/add-district')}}" class="dropdown-item" type="button">
-                        Add District
+                    <a  href="{{url('admin/post/create')}}" class="dropdown-item" type="button">
+                        Add Post
                     </a>
-                    <a  href="{{url('admin/location/add-city')}}" class="dropdown-item" type="button">
-                        Add Cities
-                    </a>
-                    <a  href="{{url('admin/location')}}" class="dropdown-item" type="button">
-                        ALL Location
+                    <a  href="{{url('admin/post/all')}}" class="dropdown-item" type="button">
+                        ALL Posts
                     </a>
                 </div>
             </li>

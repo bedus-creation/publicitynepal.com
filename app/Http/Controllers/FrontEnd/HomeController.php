@@ -11,4 +11,8 @@ class HomeController extends Controller {
 		->limit(20)->get();
 		return response()->json($products);
 	}
+	public function getPost(Request $request,$slug){
+		$post=Post::where("slug",$request->slug)->first();
+		return response()->json($post);
+	}
 }

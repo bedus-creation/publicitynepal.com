@@ -13,6 +13,6 @@ Route::group(['namespace'=>'Backend','middleware'=>'auth:api'],function(){
 	Route::post('/upload/image','PostController@uploadImage');
 });
 Route::group(['namespace'=>'FrontEnd'],function(){
-
-	Route::get('/products','HomeController@index');	
+	Route::get('/products','HomeController@index');
+	Route::get('/posts/{slug}','HomeController@getPost');	
 });

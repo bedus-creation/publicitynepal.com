@@ -18,6 +18,8 @@ import Vue from 'vue'
  Vue.use(Auth)
 
 Vue.http.options.root='http://publicitynepal.com'
+
+//Vue.http.options.root='http://localhost:8000'
 Vue.http.headers.common['Authorization']='Bearer '+Vue.auth.getToken()
 
 
