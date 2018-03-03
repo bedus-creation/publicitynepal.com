@@ -15,7 +15,8 @@
 .post-image{
 	height: 200px;
 	width: 100%;
-	background-size:contain;
+	background-size:cover !important;
+	background-position: center center !important; 
 }
 .content{
 	font-family: 'Khula', sans-serif;
