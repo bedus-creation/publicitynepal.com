@@ -17,7 +17,8 @@ import Vue from 'vue'
  Vue.use(VueResource)
  Vue.use(Auth)
 
-Vue.http.options.root='http://publicitynepal.com'
+var isProduction = process.env.NODE_ENV === 'production'
+Vue.http.options.root= (isProduction) ?'http://publicitynepal.com':'http://localhost:8000';
 
 //Vue.http.options.root='http://localhost:8000'
 Vue.http.headers.common['Authorization']='Bearer '+Vue.auth.getToken()
