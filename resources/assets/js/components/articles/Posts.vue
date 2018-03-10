@@ -8,7 +8,7 @@
 							{{category.name}}
 						</div>
 						<div>
-							Sell All
+							See All
 						</div>
 					</div>
 				</div>
