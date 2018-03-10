@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $table="category";
+    protected $table="categories";
+
+    public function Relations(){
+    	return $this->hasMany(\App\Relation::class,"category_id");
+    }
 }

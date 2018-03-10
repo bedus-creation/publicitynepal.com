@@ -14,5 +14,6 @@ Route::group(['namespace'=>'Backend','middleware'=>'auth:api'],function(){
 });
 Route::group(['namespace'=>'FrontEnd'],function(){
 	Route::get('/products','HomeController@index');
+	Route::get('/getMenus','HomeController@getMenus');
 	Route::get('/posts/{slug}','HomeController@getPost');	
 });

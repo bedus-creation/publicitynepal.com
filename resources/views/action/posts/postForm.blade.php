@@ -1,8 +1,9 @@
-@extends('layout.app-backend')
+@extends('layouts.app-backend')
 @include('admin.sidebar')
 @include('utils.success-error')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/file.upload.css')}}">
+<link href="{{asset('css/tag.css')}}" rel="stylesheet" type="text/css">
 @yield('success-error')
 <div id="form">
 	<form action="{{url('admin/post/create')}}" method="post">
@@ -19,6 +20,10 @@
 					<textarea class="form-control" name="content">{{old('content')}}</textarea>
 				</div>
 				<div class="form-group">
+					<label>Select Categories</label>
+					<input id="categories" class="form-control" type="text" name="categories"  aria-expanded="false"/>
+				</div>
+				<div class="form-group">
 					<button type="submit" class="btn btn-primary">
 						Submit
 					</button>
@@ -28,7 +33,7 @@
 				<div class="form-group">
 					<label>Form Title</label>
 				</div>
-				<div class="form-group">
+				<div class="form-group" style="height: 300px;">
 					<label>Choose Cover Photo</label>
 					<input type="hidden" name="cover"
 					value="{{old('cover')}}">
@@ -44,6 +49,7 @@
 @endsection
 @section('script')
 <script type="text/javascript" src="{{asset('js/file.upload.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/tags.js')}}"></script>
 <script type="text/javascript">
 	$('#cover').aammui({
 		baseUrl:'{{url('')}}/',
@@ -51,6 +57,16 @@
 		imageId:'cover-image',
 		serverUploadUrl:'{{url('')}}/media/upload',
 		serverAllFileUrl:'/getfiles'
+	});
+
+	var jsonData = [];
+	console.log('{!!$categories!!}');
+	jsonData=JSON.parse('{!!$categories!!}');
+	var ms1 = $('#categories').tagSuggest({
+		data: jsonData,
+		sortOrder: 'name',
+		maxDropHeight: 100,
+		name: 'categories'
 	});
 </script>
 @endsection

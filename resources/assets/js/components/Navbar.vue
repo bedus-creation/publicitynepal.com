@@ -11,46 +11,9 @@
 							<i class="fa cfa fa-home" style="width:20px"></i>
 						</router-link>
 					</li>
-					<li class="nav-item">
+					<li v-for="item in menus" class="nav-item">
 						<a class="nav-link" data-target="#explore-head-section
-						" href="#explore-head-section">समाचार</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#create"> राजनीति
-						</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="#shae">
-							कला / साहित्य
-						</a>
-					</li><li class="nav-item">
-						<a class="nav-link" href="#shae">
-							प्रवास
-						</a>
-					</li><li class="nav-item">
-						<a class="nav-link" href="#shae">
-							विचार/ब्लग
-						</a>
-					</li><li class="nav-item">
-						<a class="nav-link" href="#shae">
-							फिचर
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#shae">
-							अर्थ
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#shae">
-							स्वास्थ्य
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#shae">
-							प्रविधि
-						</a>
+						" href="#">{{item.name}}</a>
 					</li>
 				</ul>
 			</div>
@@ -82,5 +45,18 @@
 }
 </style>
 <script>
-
+export default {
+	data(){
+		return {
+			menus:[]
+		}
+	},
+	created(){
+		this.$http.get('api/getMenus')
+		.then(response=>{
+			this.menus=response.body.categories
+			console.log(response.body)
+		});
+	}
+}
 </script>

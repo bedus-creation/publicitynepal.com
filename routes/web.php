@@ -20,6 +20,12 @@ Route::group(['prefix'=>'admin','namespace'=>'Backend', 'middleware' => ['auth',
 	Route::get('post/create','ArticleController@postForm');
 	Route::post('post/create','ArticleController@postSave');
 	Route::get('/post/all','ArticleController@postList');
+
+
+	Route::get('/category/all','CategoryController@cList');
+	Route::get('/category/create','CategoryController@cForm');
+	Route::post('/category/create','CategoryController@cSave');
+	Route::get("/category/delete/{id}","CategoryController@delete");
 });
 
 Route::group(['prefix'=>'account','middleware' => ['web']], function () {

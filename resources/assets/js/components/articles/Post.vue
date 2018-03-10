@@ -1,15 +1,30 @@
 <template>
-	<div class="col-md-3 p-0">
-		<div class="card h-100">
-			<div :style="postImageStyle" class="post-image">
+	<div class="row">
+		<div v-if="i==0" class="col-md-8 p-0">
+			<div class="card h-100">	
+				<div :style="postImageStyle" class="post-image">
+				</div>
+				<div class="card-block">
+					<p class="card-text content h-25">
+						{{posts.title}}
+					</p>
+					<router-link :to="{path:'news/'+post.slug}" class="btn btn-primary float-right" >read more...</router-link>
+				</div>
 			</div>
-			<div class="card-block">
-				<p class="card-text content h-25">{{post.title}}</p>
-				<router-link :to="{path:'news/'+post.slug}" class="btn btn-primary float-right" >read more...</router-link>
+		</div>
+		<div v-if="i>0" class="col-md-4 p-0">
+			<div class="card h-25">	
+				<div :style="postImageStyle" class="post-image">
+				</div>
+				<div class="card-block">
+					<p class="card-text content h-25">
+						{{posts.title}}
+					</p>
+					<router-link :to="{path:'news/'+post.slug}" class="btn btn-primary float-right" >read more...</router-link>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </template>
 <style>
 .post-image{
@@ -28,17 +43,20 @@
 export default {
 	data(){
 		return {
-			postImageStyle:"background:url('"+this.post.featured_photo+"') no-repeat"
+			posts:{},
+			postImageStyle:''
 		}
 	},
 	created: function () {
-		this.post.content=this.trunk(this.post.content,100);
+		this.posts=this.post.posts;
+		this.posts.content=this.trunk(this.posts.content,100);
+		this.postImageStyle="background:url('"+this.posts.featured_photo+"') no-repeat";
 	},
 	methods:{
 		trunk:function(string,value){
 			return string.substring(0, value) + '...';	
 		}
 	},
-	props:['post']
+	props:['post',"i"]
 }
 </script>

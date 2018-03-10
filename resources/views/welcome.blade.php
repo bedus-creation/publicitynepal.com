@@ -19,6 +19,6 @@
      ]); ?>
    </script>
    <script src="{{asset('js/app.js')}}"></script>
-   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Khula" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Khula|Karma" rel="stylesheet"> 
  </body>
  </html>

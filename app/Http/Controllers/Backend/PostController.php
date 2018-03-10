@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 	public function index(Request $request){
-		$pots=Post::orderBy('id', 'desc')
-		->limit(5)->get();
 		return response()->json(Posts::all());
 	}
 	public function createPost(Request $request){
