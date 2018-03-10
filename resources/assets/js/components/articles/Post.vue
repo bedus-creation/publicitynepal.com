@@ -34,9 +34,9 @@
 	background-position: center center !important; 
 }
 .content{
-	font-family: 'Khula', sans-serif;
+	font-family: 'Khand', sans-serif;
 	font-style: normal;
-	font-size: 16px;
+	font-size: 18px;
 }
 </style>
 <script>

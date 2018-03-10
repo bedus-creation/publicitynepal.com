@@ -24,11 +24,12 @@
 .nav-item{
 	border-left: #3174b8 1px solid;
 	border-right: #215181 1px solid;
-	padding: 4px 10px;
+	padding-left: 10px;
+	line-height: 30px;
+	padding-right: 10px;
 }
 .fa{
-	line-height: 50%;
-	font-size: 30px;
+	font-size: 25px;
 	color:#fff;
 }
 .bg-nav{
@@ -36,8 +37,10 @@
 	background: #2964a0;
 }
 .nav-item a{
-	font-size: 15px;
-	font-family: 'Khula', sans-serif;
+	padding-top: 10px;
+	font-weight: bolder;
+	font-size: 20px;
+	font-family: 'Khand', sans-serif;
 	color:#fff !important;
 }
 .nav-link {

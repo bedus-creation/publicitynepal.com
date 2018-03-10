@@ -23,7 +23,7 @@
 	font-size:20px;
 	font-weight: bold;
 	color: #2964a0;
-	font-family: 'Karma', serif;
+	font-family: 'Khand', sans-serif;
 }
 </style>
 <script>
