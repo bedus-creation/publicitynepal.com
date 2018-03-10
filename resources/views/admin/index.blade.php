@@ -1,4 +1,4 @@
-@extends('layouts.app-backend')
+@extends('layout.app-backend')
 @include('admin.sidebar')
 
 @section('content')
