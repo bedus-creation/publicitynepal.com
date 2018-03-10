@@ -1,6 +1,6 @@
 <template>
 	<div class="container pl-0 pr-0">
-		<div v-for="category in categories">
+		<div v-for="(category,key) in categories">
 			<div class="row">
 				<div class="col-md-12 p-0">
 					<div class="card-header cat-title d-flex flex-row justify-content-between">
@@ -13,7 +13,7 @@
 					</div>
 				</div>
 			</div>	
-			<category :category="category">
+			<category :category="category" :i="key">
 			</category>
 		</div>
 	</div>
