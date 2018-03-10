@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container pl-0 pr-0">
 		<div v-for="category in categories">
 			<div class="row">
 				<div class="col-md-12 p-0">
