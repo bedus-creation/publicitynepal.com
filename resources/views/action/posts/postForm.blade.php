@@ -2,6 +2,7 @@
 @include('admin.sidebar')
 @include('utils.success-error')
 @section('content')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/file.upload.css')}}">
 <link href="{{asset('css/tag.css')}}" rel="stylesheet" type="text/css">
 @yield('success-error')
@@ -17,7 +18,7 @@
 				{{csrf_field()}}
 				<div class="form-group">
 					<label>Text Area</label>
-					<textarea class="form-control" name="content">{{old('content')}}</textarea>
+					<textarea class="form-control" id="summernote" name="content">{{old('content')}}</textarea>
 				</div>
 				<div class="form-group">
 					<label>Select Categories</label>
@@ -48,9 +49,15 @@
 </div>
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 <script type="text/javascript" src="{{asset('js/file.upload.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/tags.js')}}"></script>
 <script type="text/javascript">
+	$('#summernote').summernote({
+		placeholder: 'Hello stand alone ui',
+		tabsize: 2,
+		height: 400
+	});
 	$('#cover').aammui({
 		baseUrl:'{{url('')}}/',
 		inputId:"cover",
