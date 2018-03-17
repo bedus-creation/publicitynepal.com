@@ -1,8 +1,11 @@
 <?php
 
 Route::group(['namespace'=>'FrontEnd'],function(){
+
 	Route::get('/', 'HomeController@index');
 	Route::get('/news/{slug}','HomeController@one');
+
+	Route::get('/sitemap.xml','SitemapController@index');
 });
 
 Route::post('/image',function(){
