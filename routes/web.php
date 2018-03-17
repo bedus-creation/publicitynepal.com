@@ -1,7 +1,10 @@
 <?php
-Route::get('/', function () {
-	return view('welcome');
+
+Route::group(['namespace'=>'FrontEnd'],function(){
+	Route::get('/', 'HomeController@index');
+	Route::get('/news/{slug}','HomeController@one');
 });
+
 Route::post('/image',function(){
 	return "this is ok";
 });
