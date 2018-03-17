@@ -42,7 +42,7 @@
 		<div class="col-md-3 pl-1 pr-1 pt-0 pl-0 mb-3 sdw">
 			<div class="card h-100  border-0">	
 				<a href ="{{url('news'.'/'.$item->posts->slug)}}" class="">
-					<div :style="postImageStyle(category.relations[key].posts.featured_photo)" class="ig4">
+					<div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
 					</div>
 					<div class="card-block">
 						<p class="content pt-4" >
