@@ -15,17 +15,17 @@
 			</a>
 		</div>
 		<div class="col-md-4">
-			@foreach($category->relations as $key =>$post)
+			@foreach($category->relations as $key =>$item)
 			<div>
 				@if($key>0 && $key<5)
 				<div class="row">
-					<a href ="{{url('news'.'/'.$category->relations[0]->posts->slug)}}" class="card-header col-md-12">
+					<a href ="{{url('news'.'/'.$item->posts->slug)}}" class="card-header col-md-12">
 						<div class="media w-100">
-							<img src="{{url($post->posts->featured_photo)}}" 
+							<img src="{{url($item->posts->featured_photo)}}" 
 							class="post-list-image">
 							<div class="media-body">
 								<h5 class="content">
-									{{$category->relations[0]->posts->title}}
+									{{$item->posts->title}}
 								</h5>
 							</div>
 						</div>
