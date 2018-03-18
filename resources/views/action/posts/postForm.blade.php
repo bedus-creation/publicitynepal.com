@@ -5,6 +5,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/file.upload.css')}}">
 <link href="{{asset('css/tag.css')}}" rel="stylesheet" type="text/css">
+<style type="text/css">
+	.note-editor{
+		z-index: 0;
+	}
+</style>
 @yield('success-error')
 <div id="form">
 	<form action="{{url('admin/post/create')}}" method="post">
