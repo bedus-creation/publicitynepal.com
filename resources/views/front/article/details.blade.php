@@ -41,7 +41,7 @@
 					{{$post->title}}
 				</div>
 				<div class="card-text">
-					<span>{{{$post->content}}}</span>
+					<span>{!!$post->content!!}</span>
 				</div>
 			</div>
 		</div>
