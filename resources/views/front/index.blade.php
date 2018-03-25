@@ -39,7 +39,7 @@
 							</div>
 						</div>
 					</div>
-					@if(count($category)>0)
+					@if(count($category->relations)>0)
 					@include('front.category',[
 					'category' => $category,
 					'i'=>$key ])
