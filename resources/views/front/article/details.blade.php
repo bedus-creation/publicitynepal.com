@@ -30,7 +30,7 @@
 	  "description": "{{{$post->content}}}"
 	}
 </script>
-<article class="container">
+<article class="container" id="details">
 	<div class="row">
 		<div class="col-md-8">
 			<div class="card">
@@ -46,5 +46,10 @@
 			</div>
 		</div>
 	</div>
-</article>	
+</article>
+<style type="text/css">
+	#details img{
+		max-width: 100% !important;
+	}
+</style>	
 @endsection
