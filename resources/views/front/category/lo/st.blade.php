@@ -1,5 +1,5 @@
 @foreach($category->relations->slice(0, 8) as $item)
-<div class="col-md-3 mb-3 sdw p-0">
+<div class="c-md-3 mb-3 sdw p-0">
 	<div class="card border-0">	
 		<a href ="{{url('news'.'/'.$item->posts->slug)}}" class="">
 			<div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
@@ -19,7 +19,6 @@
 }
 .sdw{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin: 15px;
 }
 
 .ig4{
