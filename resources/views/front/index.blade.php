@@ -2,7 +2,7 @@
 
 @section('content')
 <style type="text/css">
-	.loading  {
+.loading  {
 	margin-top: 100px;	
 }
 #content .fa{
@@ -25,6 +25,11 @@
 						<i  class="fa fa-spinner fa-spin"></i>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<img src="{{url('images/esewa.gif')}}" class="w-100" height="100">		
+					</div>
+				</div> 
 				@foreach($categories as $key=> $category)
 				<div>
 					<div class="row mt-4">

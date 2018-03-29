@@ -1,4 +1,7 @@
 <style type="text/css">
+#header {
+	background: rgba(0,0,0,0.03);
+}
 #header span{
 	font-size: 40px;
 	font-weight: bold;
@@ -31,13 +34,18 @@
 }
 </style>
 <div id="header">
-	<div class="text-center">
-		<p class="card-header">
-			<span style="color:rgb(255,0,0);">Publicity</span>&nbsp;<u style="color:rgb(255,0,0); border-bottom:5px solid;">
-				<span style="color:rgb(0,0,255);">Nepal</span></u>
-			</br>
-			<small class="text-muted">A pure Nepali online News Portal</small>
-		</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 p-4">
+				<span style="color:rgb(255,0,0);">Publicity</span>&nbsp;<u style="color:rgb(255,0,0); border-bottom:5px solid;">
+					<span style="color:rgb(0,0,255);">Nepal</span></u>
+				</br>
+				<small class="text-muted">A pure Nepali online News Portal</small>
+			</div>
+			<div class="col-md-8 p-4">
+				<img src="{{url('images/nissan.gif')}}" class="w-100">	
+			</div>
+		</div>
 	</div>
 </div>
 <nav class="navbar navbar-expand-sm  navbar-dark bg-nav sticky-top">
