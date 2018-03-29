@@ -27,7 +27,7 @@
 				</div>
 				@foreach($categories as $key=> $category)
 				<div>
-					<div class="row">
+					<div class="row mt-4">
 						<div class="col-md-12 p-0">
 							<div class="card-header cat-title d-flex flex-row justify-content-between">
 								<div>

@@ -27,6 +27,22 @@ class HomeController extends Controller {
 		return view('front.article.details',["post"=>$post]);
 	}
 
+	/**
+	 * Get a Category
+	 */
+	public function category($category){
+		$data=null;
+		try{
+			$data=Category::where('slug',$category)
+			->with('child')
+			->with('Relations')->first();
+			
+		}catch(\Exception $e){
+			// redirect to error page
+		}
+		return view('front.category.index',["category"=>$data]);
+	}
+
 
 	/**
 	 *

@@ -54,8 +54,8 @@
 				</li>
 				@foreach($menus as $item)
 				<li class="nav-item">
-					<a class="nav-link" data-target="#explore-head-section
-					" href="#">{{$item->name}}</a>
+					<a class="nav-link"
+					href="{{url($item->slug)}}">{{$item->name}}</a>
 				</li>
 				@endforeach
 			</ul>

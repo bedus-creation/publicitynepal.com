@@ -1,13 +1,4 @@
 <?php
-
-Route::group(['namespace'=>'FrontEnd'],function(){
-
-	Route::get('/', 'HomeController@index');
-	Route::get('/news/{slug}','HomeController@one');
-
-	Route::get('/sitemap.xml','SitemapController@index');
-});
-
 Route::post('/image',function(){
 	return "this is ok";
 });
@@ -44,4 +35,14 @@ Route::group(['prefix'=>'account','middleware' => ['web']], function () {
 	Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+});
+
+
+Route::group(['namespace'=>'FrontEnd'],function(){
+
+	Route::get('/', 'HomeController@index');
+	Route::get('{category}', 'HomeController@category');
+	Route::get('/news/{slug}','HomeController@one');
+
+	Route::get('/sitemap.xml','SitemapController@index');
 });
