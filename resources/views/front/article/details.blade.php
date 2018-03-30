@@ -1,6 +1,7 @@
 @extends('layout.app-front')
 
 @section('content')
+@if($post)
 <script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
@@ -47,6 +48,10 @@
 		</div>
 	</div>
 </article>
+@else
+
+
+@endif
 <style type="text/css">
 @media screen and (max-width: 768px){
 	#details {

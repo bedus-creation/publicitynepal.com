@@ -23,7 +23,12 @@ class HomeController extends Controller {
 	 * @param $lug
 	 */
 	public function one(Request $request,$slug){
-		$post=Post::where("slug",$request->slug)->first();
+		try{
+			$post=Post::where("id",$request->slug)->first();
+		}catch(\Exception $e){
+
+		}
+
 		return view('front.article.details',["post"=>$post]);
 	}
 

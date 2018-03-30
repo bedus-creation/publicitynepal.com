@@ -2,7 +2,7 @@
 	@if($i==0 || $i>1)
 	<div class="row">
 		<div class="col-md-8">
-			<a href ="{{url('news'.'/'.$category->relations[0]->posts->slug)}}" class="" >
+			<a href ="{{url('news'.'/'.$category->relations[0]->posts->id)}}" class="" >
 				<div class="card h-100 w-100">	
 					<div style="background:url('{{$category->relations[0]->posts->featured_photo}}'" class="post-image">
 					</div>
@@ -19,7 +19,7 @@
 			<div>
 				@if($key>0 && $key<5)
 				<div class="row">
-					<a href ="{{url('news'.'/'.$item->posts->slug)}}" class="card-header col-md-12">
+					<a href ="{{url('news'.'/'.$item->posts->id)}}" class="card-header col-md-12">
 						<div class="media w-100">
 							<div style="background:url('{{$item->posts->featured_photo}}'" class="post-list-image">
 							</div>
@@ -41,7 +41,7 @@
 		@foreach($category->relations->slice(0, 8) as $item)
 		<div class="c-md-3 pt-0 mb-3 sdw">
 			<div class="card h-100  border-0">	
-				<a href ="{{url('news'.'/'.$item->posts->slug)}}" class="">
+				<a href ="{{url('news'.'/'.$item->posts->id)}}" class="">
 					<div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
 					</div>
 					<div class="card-block">
