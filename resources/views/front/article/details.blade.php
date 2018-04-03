@@ -34,7 +34,7 @@
 <article class="container" id="details">
 	<div class="row">
 		<div class="col-md-8">
-			<div class="card">
+			<div class="card border-0">
 				<img class="card-img-top"
 				src="{{$post->featured_photo}}" 
 				/>
