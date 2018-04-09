@@ -12,18 +12,19 @@
 </style>
 @yield('success-error')
 <div id="form">
-	<form action="{{url('admin/post')}}" method="post">
+	<form action="{{url('admin/post/'.$data->id)}}" method="post">
 		<div class="form-row">
 			<div class="col-md-8">
 				<div class="form-group">
 					<label>Form Title</label>
 					<input type="text" name="title" class="form-control"
-					value="{{old('title')}}">
+					value="{{$data->title}}">
 				</div>
 				{{csrf_field()}}
+				<input type="hidden" name="_method" value="PUT">
 				<div class="form-group">
 					<label>Text Area</label>
-					<textarea id="summernote" name="content">{{old('content')}}</textarea>
+					<textarea id="summernote" name="content">{{$data->content}}</textarea>
 				</div>
 				<div class="form-group">
 					<label>Select Categories</label>
@@ -41,12 +42,14 @@
 				</div>
 				<div class="form-group" style="height: 300px;">
 					<label>Choose Cover Photo</label>
-					<input type="hidden" name="cover"
-					value="{{old('cover')}}">
-					<div class="btn btn-primary form-control" id="cover">
+					<input type="hidden" name="featured_photo"
+					value="{{$data->featured_photo}}">
+					<div class="btn btn-primary form-control" id="featured_photo">
 						set cover
 					</div>
-					<span id="cover-image"></span>
+					<span id="featured_photo-image">
+						<img src="{{$data->featured_photo}}" class="img-fluid">
+					</span>
 				</div>
 			</div>
 		</div>
@@ -63,10 +66,10 @@
 		tabsize: 2,
 		height: 400
 	});
-	$('#cover').aammui({
+	$('#featured_photo').aammui({
 		baseUrl:'{{url('')}}/',
-		inputId:"cover",
-		imageId:'cover-image',
+		inputId:"featured_photo",
+		imageId:'featured_photo-image',
 		serverUploadUrl:'{{url('')}}/media/upload',
 		serverAllFileUrl:'/getfiles'
 	});

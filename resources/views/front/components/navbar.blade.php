@@ -2,7 +2,7 @@
 #header {
 	background: rgba(0,0,0,0.03);
 }
-#header span{
+#header span,a span{
 	font-size: 40px;
 	font-weight: bold;
 	font-family: 'Kaushan Script', cursive;
@@ -32,6 +32,11 @@
 .nav-link {
 	padding: 0.5rem;
 }
+@media screen and (max-width: 768px){
+	a span{
+		font-size: 24px;
+	}
+}
 </style>
 <div id="header">
 	<div class="container">
@@ -53,6 +58,10 @@
 		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		&nbsp;
+		<a href="{{url('')}}" class="d-inline d-md-none"><span style="color:rgb(255,0,0);">Publicity</span>&nbsp;
+			<span style="color:rgb(255,255,255);">Nepal</span></u>
+		</a>
 		<div class="collapse navbar-collapse text-center bg-nav" id="navbarCollapse">
 			<ul class="navbar-nav">
 				<li class="nav-item">

@@ -14,9 +14,8 @@ Route::group(['namespace'=>'Backend','middleware'=>['auth','web']],function(){
 
 Route::group(['prefix'=>'admin','namespace'=>'Backend', 'middleware' => ['auth','web']],function(){
 	Route::get('/','AdminController@index');
-	Route::get('post/create','ArticleController@postForm');
-	Route::post('post/create','ArticleController@postSave');
-	Route::get('/post/all','ArticleController@postList');
+	Route::resource('post', 'PostController');
+	
 
 
 	Route::get('/category/all','CategoryController@cList');

@@ -25,7 +25,7 @@
                     <a  href="{{url('admin/post/create')}}" class="dropdown-item" type="button">
                         Add Post
                     </a>
-                    <a  href="{{url('admin/post/all')}}" class="dropdown-item" type="button">
+                    <a  href="{{url('admin/post')}}" class="dropdown-item" type="button">
                         ALL Posts
                     </a>
                 </div>

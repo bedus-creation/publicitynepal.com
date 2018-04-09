@@ -1,40 +1,158 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-use App\Http\Controllers\Controller;	
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Action\Post\UpdatePostRequest;
+use Illuminate\Support\Facades\DB;
+use App\Relation;
+use App\Category;
 use App\Post;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class PostController extends Controller
 {
-	public function index(Request $request){
-		return response()->json(Posts::all());
-	}
-	public function createPost(Request $request){
-		$post =new Post;
-		try{
-			$post->title=$request->title;
-			$post->slug=Str::slug($request->title);
-			$post->featured_photo=$request->featured_photo;
-			$post->content=$request->content;
-			$post->user_id=$request->user()->id;
-			if($post->save()){
-				$request->session()->flash("","Post created Successfully");
-			}
-		}catch(\Exception $e){
-			return response()->json($e->getMessage());
-		}
-		return redirect()->back();
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        // TODO --List
+        // Implement Repository Pattern
+        $data= Post::all();
 
-	}
-	public function uploadImage(Request $request){
-		If($request->file('file')->isValid()){
-			$destinationPath = 'uploads';
-			$fileName = $request->file('file')->getClientOriginalName();
-			$request->file('file')->move($destinationPath, $fileName);
-			echo  $fileName;
-		}
-	}
+        return view('action.posts.index',['data'=>$data]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $categories=Category::select(["id","name"])->get();
+        return view('action.posts.postForm',["categories"=>json_encode($categories)]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request["slug"]=\Str::slug($request->title);
+        $this->validate($request,[
+            'title'=>'required',
+            'slug'=>'required|min:3',
+            'content'=>'required',
+            'cover'=>'required',
+            'categories'=>'required'
+        ]);
+        $post =new Post;
+        $categories=json_decode($request->categories);
+        try{
+            $post->title=$request->title;
+            $post->slug=$request->slug;
+            $post->featured_photo=$request->cover;
+            $post->content=$request->content;
+            $post->user_id=Auth::User()->id;
+            DB::transaction(function() use ($post,$categories){
+                $post->save();
+                foreach($categories as $item) {
+                    $relation=new Relation;
+                    $relation->posts_id=$post->id;
+                    $relation->category_id=$item;
+                    $relation->save();
+                }
+            });
+            $request->session()->flash("success","Post created Successfully");
+        }catch(\Exception $e){
+            return $request->session()->flash("error",$e->getMessage());
+        }
+        return redirect()->back();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+
+        try{
+            $data=Post::find($id);
+
+        }catch(\Exception $e){
+            return redirect()->back();
+        }
+
+        $categories=Category::select(["id","name"])->get();
+
+        return view('action.posts.modals.edit',["data"=>$data,"categories"=>json_encode($categories)]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdatePostRequest $request, $id)
+    {
+        $categories=json_decode($request->categories);
+        try{
+            $request=$request->merge(['user_id'=>Auth::User()->id,'slug'=>\Str::slug($request->title)]);
+            DB::transaction(function() use ($id,$request,$categories){
+                // fillable not working 
+                $post=Post::where('id',$id)
+                ->update($request->except(['_token','_method','files','categories']));
+                
+                // Drop All previous relations
+                $dR=Relation::where('posts_id',$id)->delete();
+
+                // Create New Relations
+                foreach($categories as $item) {
+                    $relation=new Relation;
+                    $relation->posts_id=$post->id;
+                    $relation->category_id=$item;
+                    $relation->save();
+                }
+            });
+            $request->session()->flash("success","Post Updated Successfully");
+        }catch(\Exception $e){
+            $request->session()->flash("error",$e->getMessage());
+        }
+        return redirect()->back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

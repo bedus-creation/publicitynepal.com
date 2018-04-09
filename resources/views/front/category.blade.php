@@ -1,18 +1,29 @@
+<link href="https://fonts.googleapis.com/css?family=Eczar|Poppins" rel="stylesheet">
 <div id="category">
 	@if($i==0 || $i>1)
 	<div class="row">
 		<div class="col-md-8">
-			<a href ="{{url('news'.'/'.$category->relations[0]->posts->id)}}" class="" >
-				<div class="card h-100 w-100">	
-					<div style="background:url('{{$category->relations[0]->posts->featured_photo}}'" class="post-image">
+			<div id="c-c" class="carousel slide w-100" data-ride="carousel">
+				<div class="carousel-inner">
+					@foreach($category->relations->slice(0,10) as $key =>$item)
+					<div class="carousel-item {{$key==0?'active':''}}">
+						<img class="d-block w-100 post-image" src="{{$item->posts->featured_photo}}" alt="First slide">
+						<div class="carousel-caption d-none d-md-block">
+							<h3 class="n-title">{{$item->posts->title}}</h3>
+							<p>&nbsp;</p>
+						</div>
 					</div>
-					<div class="card-block">
-						<p class="n-title">
-							{{$category->relations[0]->posts->title}}
-						</p>
-					</div>
+					@endforeach
 				</div>
-			</a>
+				<a class="carousel-control-prev" href="#c-c" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#c-c" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
 		</div>
 		<div class="col-md-4">
 			@foreach($category->relations as $key =>$item)
@@ -62,7 +73,7 @@
 }
 .n-title{
 	padding: 5px 10px;
-	font-family: 'Khand', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-style: bold;
 	font-size: 30px;
 	line-height: 1.8;
@@ -89,14 +100,17 @@
 }
 .content{
 	padding: 0 10px;
-	font-family: 'Khand', sans-serif;
+	font-family: 'Eczar', serif;
 	font-style: bold;
 	font-size: 20px;
 	line-height: 1.4;
 }
+.carousel-caption{
+	background: rgba(0,0,0,0.8);
+}
 @media screen and (max-width: 768px){
 	.post-image{
-		height: 200px;
+		height: 150px;
 		width: 100%;
 		background-size:cover !important;
 		background-position: center center !important; 
