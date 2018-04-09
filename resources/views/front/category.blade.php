@@ -7,11 +7,13 @@
 				<div class="carousel-inner">
 					@foreach($category->relations->slice(0,10) as $key =>$item)
 					<div class="carousel-item {{$key==0?'active':''}}">
-						<img class="d-block w-100 post-image" src="{{$item->posts->featured_photo}}" alt="First slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3 class="n-title">{{$item->posts->title}}</h3>
-							<p>&nbsp;</p>
-						</div>
+						<a href="{{url('news/'.$item->id)}}">
+							<img class="d-block w-100 post-image" src="{{$item->posts->featured_photo}}" alt="First slide">
+							<div class="carousel-caption d-none d-md-block">
+								<h3 class="n-title">{{$item->posts->title}}</h3>
+								<p>&nbsp;</p>
+							</div>
+						</a>
 					</div>
 					@endforeach
 				</div>
