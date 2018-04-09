@@ -1,13 +1,37 @@
-.overlay{
+#buffer .fa {
+    color: #fff;
+}
+
+#buffer .temp-img i {
+    margin: 0;
+}
+#buffer .local{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+    background:rgba(0,0,0,0.6);
+}
+#buffer .temp-img {
+    
+    height: 10rem;
+    width: 10rem;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.overlay {
     z-index: 2;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.hero{
+
+.hero {
     padding: 20px;
     z-index: 9;
     position: fixed;
@@ -15,19 +39,21 @@
     left: 20%;
     width: 60%;
     height: 60%;
-    background:#fff;
+    background: #fff;
     overflow-y: auto;
 }
-#bedusUpload{
+
+#bedusUpload {
     z-index: 9;
     width: 100%;
-    height: 100%;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
-#bedusUpload:hover{
+
+#bedusUpload:hover {
     cursor: pointer;
 }
+
 img {
     opacity: 1;
     transition: opacity 0.3s;
@@ -36,17 +62,18 @@ img {
 img[data-src] {
     opacity: 0;
 }
-@media screen and (max-width: 720px){
-    .hero{
-        left:0;
-        top:0;
+
+@media screen and (max-width: 720px) {
+    .hero {
+        left: 0;
+        top: 0;
         width: 100%;
         font-size: 10px;
         min-width: 320px;
         min-height: 300px;
     }
-    .nav-link ,.nav-tabs{
-        padding-left:5px !important;
+    .nav-link, .nav-tabs {
+        padding-left: 5px !important;
         padding-right: 5px !important;
     }
 }
