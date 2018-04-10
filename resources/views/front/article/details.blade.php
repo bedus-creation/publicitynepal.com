@@ -1,6 +1,7 @@
 @extends('layout.app-front')
 
 @section('content')
+<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 @if($post)
 <script type="application/ld+json">
 	{
@@ -42,7 +43,7 @@
 					{{$post->title}}
 				</div>
 				<div class="card-text">
-					<span>{!!$post->content!!}</span>
+					<span class="d-c">{!!$post->content!!}</span>
 				</div>
 			</div>
 		</div>
@@ -53,13 +54,18 @@
 
 @endif
 <style type="text/css">
-@media screen and (max-width: 768px){
-	#details {
-		padding: 0 !important;
-	}
+#details .d-c{
+	font-family: 'Mukta', sans-serif !important;
+	font-size: 20px !important;
+	line-height: 30px !important;
 }
 #details img{
 	max-width: 100% !important;
+}
+@media screen and (max-width: 768px){
+	#details {
+		padding: 10 !important;
+	}
 }
 </style>	
 @endsection

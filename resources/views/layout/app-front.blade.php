@@ -102,10 +102,10 @@
 				<div class="col-md-12 text-center">
 
 					<div class="mb-5">
-						<a>
+						<a href="https://www.facebook.com/publicitynepalnews/">
 							<i class="fa fa-facebook"> </i>
 						</a>
-						<a>
+						<a href="#">
 							<i class="fa fa-youtube"> </i>
 						</a>
 						<a>
