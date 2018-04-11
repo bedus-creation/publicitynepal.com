@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Eczar|Poppins" rel="stylesheet">
 <style type="text/css">
-	.fa-clock-o{
-		font-size: 16px !important;
-	}
+.fa-clock-o{
+	font-size: 16px !important;
+}
 </style>
 <div id="category">
 	@if($i==0 || $i>1)
@@ -33,9 +33,8 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			@foreach($category->relations as $key =>$item)
+			@foreach($category->relations->slice(1,4) as $key =>$item)
 			<div>
-				@if($key>0 && $key<5)
 				<div class="row">
 					<a href ="{{url('news'.'/'.$item->posts->id)}}" class="card-header col-md-12">
 						<div class="media w-100">
@@ -45,14 +44,14 @@
 								<h5 class="content">
 									{{$item->posts->title}}
 									<br>
-									<small><i class="fa fa-clock-o"></i>&nbsp;{{
-										$item->posts->created_at->diffForHumans()}}</small>
+									<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
+										$item->posts->created_at->diffForHumans()}}
+									</small>
 								</h5>
 							</div>
 						</div>
 					</a>
 				</div>
-				@endif
 			</div>
 			@endforeach
 		</div>

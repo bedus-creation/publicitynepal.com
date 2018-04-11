@@ -25,6 +25,8 @@ class HomeController extends Controller {
 	public function one(Request $request,$slug){
 		try{
 			$post=Post::where("id",$request->slug)->first();
+			$post->views+=1;
+			$post->save();
 		}catch(\Exception $e){
 
 		}

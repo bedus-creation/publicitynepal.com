@@ -9,6 +9,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Last Update</th>
+				<th>Count Views</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -17,6 +18,7 @@
 			<tr>
 				<td width="20%">{{$item->title}}</td>
 				<td>{{$item->updated_at}}</td>
+				<td width="20px">{{$item->views}}</td>
 				<td><a href="{{url('/admin/post/'.$item->id.'/edit')}}" class="btn btn-outline-success "><i class="fa fa-pencil"></i></a>&nbsp;<a href="#" class="btn btn-outline-danger "><i class="fa fa-trash"></i></a></td>
 			</tr>
 			@endforeach
@@ -25,6 +27,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Last Update</th>
+				<th>Count Views</th>
 				<th>Action</th>
 			</tr>
 		</tfoot>

@@ -140,5 +140,6 @@ crossorigin="anonymous"></script>
 
   gtag('config', 'UA-106586554-4');
 </script>
+@yield('script')
 </body>
 </html>
