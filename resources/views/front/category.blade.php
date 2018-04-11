@@ -1,4 +1,9 @@
 <link href="https://fonts.googleapis.com/css?family=Eczar|Poppins" rel="stylesheet">
+<style type="text/css">
+	.fa-clock-o{
+		font-size: 16px !important;
+	}
+</style>
 <div id="category">
 	@if($i==0 || $i>1)
 	<div class="row">
@@ -39,6 +44,9 @@
 							<div class="media-body">
 								<h5 class="content">
 									{{$item->posts->title}}
+									<br>
+									<small><i class="fa fa-clock-o"></i>&nbsp;{{
+										$item->posts->created_at->diffForHumans()}}</small>
 								</h5>
 							</div>
 						</div>
