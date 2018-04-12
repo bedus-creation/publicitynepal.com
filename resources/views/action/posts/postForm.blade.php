@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="{{asset('css/file.upload.css')}}">
 <link href="{{asset('css/tag.css')}}" rel="stylesheet" type="text/css">
 <style type="text/css">
-	.note-toolbar{
-		z-index: 0;
-	}
+.note-toolbar{
+
+}
 </style>
 @yield('success-error')
 <div id="form">
@@ -57,11 +57,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 <script type="text/javascript" src="{{asset('js/file.upload.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/tags.js')}}"></script>
+<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 <script type="text/javascript">
 	$('#summernote').summernote({
+		toolbar: [
+		['style', ['style']],
+		['fontsize', ['fontsize']],
+		['font', ['bold', 'italic', 'underline', 'clear']],
+		['fontname', ['fontname']],
+		['color', ['color']],
+		['para', ['ul', 'ol', 'paragraph']],
+		['height', ['height']],
+		['insert', ['picture', 'hr']],
+		['table', ['table']],
+		['view', ['fullscreen', 'codeview']]
+		],
 		placeholder: 'Hello stand alone ui',
 		tabsize: 2,
-		height: 400
+		height: 400,
+		fontSizes: ['12', '14', '18','20','22','24', '36', '48'],
+		fontNames: ["Mukta, sans-serif"]
 	});
 	$('#cover').aammui({
 		baseUrl:'{{url('')}}/',

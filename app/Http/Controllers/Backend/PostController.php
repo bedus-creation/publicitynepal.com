@@ -49,7 +49,6 @@ class PostController extends Controller
         $request["slug"]=\Str::slug($request->title);
         $this->validate($request,[
             'title'=>'required',
-            'slug'=>'required|min:3',
             'content'=>'required',
             'cover'=>'required',
             'categories'=>'required'
