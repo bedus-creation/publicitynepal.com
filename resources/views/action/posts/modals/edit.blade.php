@@ -62,9 +62,23 @@
 <script type="text/javascript" src="{{asset('js/tags.js')}}"></script>
 <script type="text/javascript">
 	$('#summernote').summernote({
+		toolbar: [
+		['style', ['style']],
+		['fontsize', ['fontsize']],
+		['font', ['bold', 'italic', 'underline', 'clear']],
+		['fontname', ['fontname']],
+		['color', ['color']],
+		['para', ['ul', 'ol', 'paragraph']],
+		['height', ['height']],
+		['insert', ['picture', 'hr']],
+		['table', ['table']],
+		['view', ['fullscreen', 'codeview']]
+		],
 		placeholder: 'Hello stand alone ui',
 		tabsize: 2,
-		height: 400
+		height: 400,
+		fontSizes: ['12', '14', '18','20','22','24', '36', '48'],
+		fontNames: ["Mukta, sans-serif"]
 	});
 	$('#featured_photo').aammui({
 		baseUrl:'{{url('')}}/',
