@@ -7,7 +7,6 @@
 <link href="{{asset('css/tag.css')}}" rel="stylesheet" type="text/css">
 <style type="text/css">
 	.note-toolbar{
-		z-index: 0;
 	}
 </style>
 @yield('success-error')
