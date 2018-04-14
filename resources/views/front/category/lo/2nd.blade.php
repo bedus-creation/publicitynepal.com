@@ -29,10 +29,6 @@
     a:hover {
         text-decoration: none;  
     }
-    a.nav-link{
-        font-family: 'Eczar', serif;
-        line-height: 1.5;
-    }
     .card-footer{
         line-height: 1.5;
         text-align: justify;
@@ -49,6 +45,8 @@
         text-align: center;
     }
     .nav-c>li>a{
+        font-family: 'Eczar', serif;
+        line-height: 1.5;
         font-size: 18px;
         border-left:1px solid #f1f1f1;
         border-right:1px solid #f1f1f1;
