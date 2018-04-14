@@ -112,7 +112,7 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         @if(count($tab1->relations)>0)
-                        @foreach($tab1->relations->slice(0,3) as $item)
+                        @foreach($tab1->relations->slice(0,2) as $item)
                         <div class="">
                             <div class="lnt24">
                                 {{$item->posts->title}}
@@ -130,7 +130,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         @if(count($tab2->relations)>0)
-                        @foreach($tab2->relations->slice(0,7) as $key=> $item)
+                        @foreach($tab2->relations->slice(0,6) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
@@ -148,7 +148,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         @if(count($tab3->relations)>0)
-                        @foreach($tab3->relations->slice(0,7) as $key=> $item)
+                        @foreach($tab3->relations->slice(0,6) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
