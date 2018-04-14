@@ -40,9 +40,12 @@
         display: flex;
         justify-content: center;
     }
+    .nav li{
+        width: 33%;
+        text-align: center;
+    }
     .nav-c>li>a{
         font-size: 18px;
-        padding: 0 20px;
         border-left:1px solid #f1f1f1;
         border-right:1px solid #f1f1f1;
     }
@@ -92,24 +95,24 @@
                 <ul class="nav nav-c mb-3" id="nav-tab" role="tablist">
                     <li class="">
                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                            {{$cat->name}}
+                            {{$tab1->name}}
                         </a>
                     </li>
                     <li class="">
                         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            {{$cat->name}}
+                            {{$tab2->name}}
                         </a>
                     </li>
                     <li class="">
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
-                            {{$cat->name}}
+                            {{$tab3->name}}
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        @if(count($cat->relations)>0)
-                        @foreach($cat->relations->slice(0,3) as $item)
+                        @if(count($tab1->relations)>0)
+                        @foreach($tab1->relations->slice(0,3) as $item)
                         <div class="">
                             <div class="lnt24">
                                 {{$item->posts->title}}
@@ -126,8 +129,8 @@
                         @endif
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        @if(count($cat->relations)>0)
-                        @foreach($cat->relations->slice(0,7) as $key=> $item)
+                        @if(count($tab2->relations)>0)
+                        @foreach($tab2->relations->slice(0,7) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
@@ -144,8 +147,8 @@
                         @endif
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        @if(count($cat->relations)>0)
-                        @foreach($cat->relations->slice(0,7) as $key=> $item)
+                        @if(count($tab3->relations)>0)
+                        @foreach($tab3->relations->slice(0,7) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
