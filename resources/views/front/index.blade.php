@@ -33,7 +33,7 @@
 				@foreach($categories as $key=> $category)
 				@if($key==1)
 				<div class="row">
-				@include('front.category.lo.2nd',["news"=>$categories[3],"tab1"=>$categories[10],"tab2"=>$categories[9],"tab3"=>$categories[10]])
+				@include('front.category.lo.2nd',["news"=>$categories[3],"tab1"=>$categories[10],"tab2"=>$categories[9],"tab3"=>$categories[7]])
 				</div>
 				@endif
 				<div>
