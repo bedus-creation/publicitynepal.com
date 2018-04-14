@@ -21,17 +21,19 @@
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Position</th>
-				<th>Office</th>
-				<th>Age</th>
+				<th>Url</th>
+				<th>Parent</th>
+				<th>Category ID</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr>
 				<th>Name</th>
-				<th>Position</th>
-				<th>Office</th>
-				<th>Age</th>
+				<th>Url</th>
+				<th>Parent</th>
+				<th>Category ID</th>
+				<th>Action</th>
 			</tr>
 		</tfoot>
 		@foreach($categories as $item)
@@ -40,6 +42,7 @@
 				<td>{{$item->name}}</td>
 				<td>{{$item->slug}}</td>
 				<td>{{$item->parent}}</td>
+				<th>{{$item->id}}</th>
 				<td class="text-center">
 					<a href="#" class="border border-primary">
 						<i class="text-primary fa fa-pencil"></i>

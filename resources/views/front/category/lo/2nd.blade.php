@@ -127,7 +127,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         @if(count($cat->relations)>0)
-                        @foreach($cat->relations->slice(0,9) as $key=> $item)
+                        @foreach($cat->relations->slice(0,7) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
@@ -145,7 +145,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         @if(count($cat->relations)>0)
-                        @foreach($cat->relations->slice(0,9) as $key=> $item)
+                        @foreach($cat->relations->slice(0,7) as $key=> $item)
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
