@@ -29,6 +29,10 @@
     a:hover {
         text-decoration: none;  
     }
+    a.nav-link{
+        font-family: 'Eczar', serif;
+        line-height: 1.5;
+    }
     .card-footer{
         line-height: 1.5;
         text-align: justify;
