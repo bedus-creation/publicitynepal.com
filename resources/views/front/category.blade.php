@@ -16,7 +16,9 @@
 							<img class="d-block w-100 post-image" src="{{$item->posts->featured_photo}}" alt="First slide">
 							<div class="carousel-caption d-none d-md-block">
 								<h3 class="n-title">{{$item->posts->title}}</h3>
-								<p>&nbsp;</p>
+								<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
+									$item->posts->created_at->diffForHumans()}}
+								</small>
 							</div>
 						</a>
 					</div>
@@ -33,11 +35,11 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			@foreach($category->relations->slice(1,4) as $key =>$item)
+			@foreach($category->relations->slice(1,3) as $key =>$item)
 			<div>
 				<div class="row">
 					<a href ="{{url('news'.'/'.$item->posts->id)}}" class="card-header col-md-12">
-						<div class="media w-100">
+						<div class="media w-100  text-center">
 							<div style="background:url('{{$item->posts->featured_photo}}'" class="post-list-image">
 							</div>
 							<div class="media-body">
@@ -67,6 +69,10 @@
 					<div class="card-block">
 						<p class="content pt-4" >
 							{{$item->posts->title}}
+							<br>
+							<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
+								$item->posts->created_at->diffForHumans()}}
+							</small>
 						</p>
 					</div>
 				</router-link>
@@ -108,6 +114,7 @@
 	background-position: center center !important; 
 }
 .content{
+	text-align: center;
 	padding: 0 10px;
 	font-family: 'Eczar', serif;
 	font-style: bold;
