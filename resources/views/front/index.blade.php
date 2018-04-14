@@ -30,13 +30,13 @@
 						<img src="{{url('images/esewa.gif')}}" class="w-100" height="100">		
 					</div>
 				</div> 
-				
+
 				@foreach($categories as $key=> $category)
 				@if($key==1)
 				<div class="row">
 				@include('front.category.lo.2nd',["news"=>$categories[3],"tab1"=>$categories[10],"tab2"=>$categories[9],"tab3"=>$categories[7]])
 				</div>
-				@elseif($key!=3 || $key!=10 || $key!=9 || $key!=7)
+				@elseif($key!=3 && $key!=10 && $key!=9 && $key!=7)
 				<div>
 					<div class="row mt-4">
 						<div class="col-md-12 p-0">
