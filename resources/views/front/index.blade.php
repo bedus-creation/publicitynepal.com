@@ -30,7 +30,9 @@
 						<img src="{{url('images/esewa.gif')}}" class="w-100" height="100">		
 					</div>
 				</div> 
-
+				<div class="row">
+				@include('front.category.lo.3rd',["data"=>$categories[10]])
+				</div>
 				@foreach($categories as $key=> $category)
 				@if($key==1)
 				<div class="row">

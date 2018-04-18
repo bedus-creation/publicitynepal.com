@@ -115,6 +115,7 @@
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         @if(count($tab1->relations)>0)
                         @foreach($tab1->relations->slice(0,2) as $item)
+                        <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="lnt24">
                                 {{$item->posts->title}}
@@ -126,6 +127,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         <hr>
                         @endforeach
                         @endif
@@ -133,6 +135,7 @@
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         @if(count($tab2->relations)>0)
                         @foreach($tab2->relations->slice(0,6) as $key=> $item)
+                        <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
@@ -144,6 +147,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         <hr>
                         @endforeach
                         @endif
