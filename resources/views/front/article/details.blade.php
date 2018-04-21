@@ -41,14 +41,24 @@
 				</div>
 				<div class="d-flex justify-content-start">
 					<div class="p-2">
-						<div class="fb-share-button btn p-2" data-href="{{url()->current()}}" 
-							data-layout="button_count" data-size="large">
+						<div class="fb_sh_d">
+							<div>
+								<span id="fb-share-count">0</span>
+								<p> Shares </p>
+							</div>
 						</div>
 					</div>
-					<div class="p-2">
-
-						<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">
-							<div style="background: #55ACEE; width: 100px;" class="btn text-center"><i class="fa fa-twitter"></i></div>
+					<div class="fb-share p-2 ">
+						<a href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&app_id=1622291221319152&sdk=joey&u={{url()->current()}}&display=popup&ref=plugin&src=share_button" 
+						onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" style="background: #3B5998; width: 100px;" class="btn "><i class="fa fa-facebook"></i></a>
+					</div>
+					<div class="fb-share p-2 ">
+							<a
+								href="https://twitter.com/intent/tweet?text={{$post->title.' '.url()->current()}}" style="background: #55ACEE;" class="btn text-center w-100"
+								onclick="return !window.open(this.href, 'Twitter', 'width=640,height=580')"
+								>
+								<i class="fa fa-twitter"></i>
+							</a>
 						</a>
 					</div>
 				</div>
@@ -82,6 +92,25 @@
 #details img{
 	max-width: 100% !important;
 }
+.fb-share{
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	height: 100px;
+	width: 100px;
+}
+#fb-share-count{
+	line-height: 1.5;
+	font-size: 60px;
+	font-weight: 600;
+}
+.fb_sh_d{
+	width: 180px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 @media screen and (max-width: 768px){
 	.card-header{
 		font-size: 24px;
@@ -100,5 +129,23 @@
 	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1622291221319152&autoLogAppEvents=1';
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+var i=0;
+while(i<=30){
+	setTimeout(function(){
+		i++;
+		$('#fb-share-count').text(i);//data.share.share_count
+	},1000);
+}
+
+$.ajax({
+	url:"//graph.facebook.com/",
+	type:"GET",
+	data:'id='+'{{url()->current()}}',
+	success:function(data){
+		
+	}
+})
+
 </script>
 @endsection

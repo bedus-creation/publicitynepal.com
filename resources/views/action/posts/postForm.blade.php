@@ -36,14 +36,11 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="form-group">
-					<label>Form Title</label>
-				</div>
 				<div class="form-group" style="height: 300px;">
 					<label>Choose Cover Photo</label>
 					<input type="hidden" name="cover"
 					value="{{old('cover')}}">
-					<div class="btn btn-primary form-control" id="cover">
+					<div class="btn btn-secondary form-control" id="cover">
 						set cover
 					</div>
 					<span id="cover-image"></span>

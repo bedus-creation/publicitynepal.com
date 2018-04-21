@@ -124,7 +124,7 @@
                 </div>
                 <div>
                     <button type="button" class="btn btn-primary" onclick="$('#notification').toggle();">
-                        <i class="fa fa-bell pr-2"></i> <span class="badge badge-light" id="notification-count">9</span>
+                        <i class="fa fa-bell pr-2"></i> <span class="badge badge-light" id="notification-count">0</span>
                         <span class="sr-only">unread messages</span>
                     </button>
 

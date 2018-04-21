@@ -44,7 +44,7 @@
 							</div>
 							<div class="media-body">
 								<h5 class="content">
-									{{$item->posts->title}}
+									{{substr($item->posts->title,0,45)}}
 									<br>
 									<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
 										$item->posts->created_at->diffForHumans()}}
@@ -97,7 +97,7 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .post-list-image{
-	width: 120px;
+	width: 11rem;
 	height: 100px;
 	background-size: cover !important;
 	background-position: center;
@@ -108,7 +108,7 @@
 	background-position: center center !important; 
 }
 .post-image{
-	height: 350px;
+	height: 24rem;
 	width: 100%;
 	background-size:cover !important;
 	background-position: center center !important; 

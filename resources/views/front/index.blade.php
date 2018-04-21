@@ -47,7 +47,7 @@
 									{{$category->name}}
 								</div>
 								<div>
-									See All
+									<a href="{{url($category->slug)}}">See All</a>
 								</div>
 							</div>
 						</div>

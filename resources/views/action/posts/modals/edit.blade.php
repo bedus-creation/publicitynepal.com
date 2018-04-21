@@ -36,14 +36,11 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="form-group">
-					<label>Form Title</label>
-				</div>
 				<div class="form-group" style="height: 300px;">
 					<label>Choose Cover Photo</label>
 					<input type="hidden" name="featured_photo"
 					value="{{$data->featured_photo}}">
-					<div class="btn btn-primary form-control" id="featured_photo">
+					<div class="btn btn-secondary form-control" id="featured_photo">
 						set cover
 					</div>
 					<span id="featured_photo-image">

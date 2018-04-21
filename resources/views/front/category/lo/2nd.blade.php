@@ -86,7 +86,7 @@
                         </div>
                         <div style="background:url('{{$news->relations[0]->posts->featured_photo}}')" class="ig8">
                         </div>
-                        <div class="card-footer text-dark">
+                        <div class="card-footer">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! \Str::limit(strip_tags($news->relations[0]->posts->content), $limit = 250, $end = '....') !!}
                         </div>
                     </a>
@@ -155,6 +155,7 @@
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         @if(count($tab3->relations)>0)
                         @foreach($tab3->relations->slice(0,6) as $key=> $item)
+                        <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
@@ -166,6 +167,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         <hr>
                         @endforeach
                         @endif
@@ -177,7 +179,7 @@
             <div class="col-md-12">
                 @if(count($news->relations)>0)
                 <div class="row card-group">
-                    @foreach($news->relations->slice(1, 6) as $item)
+                    @foreach($news->relations->slice(1, 6) as $key=> $item)
                     <div class="col-md-4 pt-0 mb-3" style="padding:0 5px">
                         <div class="card h-100  border-0" style="background:#fafafa;">	
                             <a href ="{{url('news'.'/'.$item->posts->id)}}" class="">
@@ -190,8 +192,10 @@
                                         </small>
                                     </p>
                                 </div>
+                                @if($key<4)
                                 <div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
                                 </div>
+                                @endif
                             </a>
                         </div>
                     </div>
