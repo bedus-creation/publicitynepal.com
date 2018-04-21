@@ -130,20 +130,21 @@
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-var i=0;
-while(i<=30){
-	setTimeout(function(){
-		i++;
-		$('#fb-share-count').text(i);//data.share.share_count
-	},1000);
-}
 
 $.ajax({
 	url:"//graph.facebook.com/",
 	type:"GET",
 	data:'id='+'{{url()->current()}}',
 	success:function(data){
-		
+		$(this).prop('Counter',0).animate({
+		Counter: data.share.share_count;
+		}, {
+			duration: 4000,
+			easing: 'swing',
+			step: function (now) {
+				$("#fb-share-count").text(Math.ceil(now));
+			}
+		});
 	}
 })
 

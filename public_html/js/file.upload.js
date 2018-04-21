@@ -94,7 +94,7 @@
 		 addMultipleFiles: function (data, env) {
 		 	data.data.forEach(function (item) {
 		 		model.add({
-		 			ImgSrc: env.baseUrl + item.path,
+		 			ImgSrc: env.baseUrl + item,
 		 			id: currentId,
 		 			type: 'server',
 		 			status: 'success'
