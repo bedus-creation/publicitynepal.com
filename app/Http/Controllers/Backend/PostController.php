@@ -97,6 +97,13 @@ class PostController extends Controller
     public function edit($id)
     {
 
+        $selection=[];
+        
+        $selectedCategory = Relation::select("posts_id", "category_id")->where("posts_id", $id)->get();
+        foreach ($selectedCategory as $item) {
+            $selection[]=$item->category_id;
+        }
+
         try{
             $data=Post::find($id);
 
@@ -106,7 +113,9 @@ class PostController extends Controller
 
         $categories=Category::select(["id","name"])->get();
 
-        return view('action.posts.modals.edit',["data"=>$data,"categories"=>json_encode($categories)]);
+        return view('action.posts.modals.edit',["data"=>$data,
+        "selected"=>$selection,
+        "categories"=>json_encode($categories)]);
     }
 
     /**
@@ -132,7 +141,7 @@ class PostController extends Controller
                 // Create New Relations
                 foreach($categories as $item) {
                     $relation=new Relation;
-                    $relation->posts_id=$post->id;
+                    $relation->posts_id=$id;
                     $relation->category_id=$item;
                     $relation->save();
                 }
@@ -152,6 +161,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

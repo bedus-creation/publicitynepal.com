@@ -34,7 +34,7 @@
 </script>
 <article class="container" id="details">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-9">
 			<div class="card border-0">
 				<div class="card-header">
 					{{$post->title}}
@@ -69,6 +69,13 @@
 			<div class="card-text">
 				<span class="d-c">{!!$post->content!!}</span>
 			</div>
+
+			<div class="alert alert-light">
+				<div id="fb-root"></div>
+				<div class="fb-comments" data-href="{{url()->current()}}" data-width="100%"  data-numposts="5"></div>
+			</div>
+		</div>
+		<div class="col-md-3">
 		</div>
 	</div>
 </div>
@@ -137,7 +144,7 @@ $.ajax({
 	data:'id='+'{{url()->current()}}',
 	success:function(data){
 		$(this).prop('Counter',0).animate({
-		Counter: data.share.share_count;
+		Counter: data.share.share_count
 		}, {
 			duration: 4000,
 			easing: 'swing',

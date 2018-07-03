@@ -37,14 +37,3 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'featured_photo'=>$faker->imageUrl(640, 480),
     ];
 });
-
-$factory->define(App\Relation::class, function (Faker $faker) {
-    return [
-        "posts_id"=>function () {
-            return App\Post::inRandomOrder()->first()->id;
-        },
-        'category_id'=>function () {
-            return App\Category::inRandomOrder()->first()->id;
-        }
-    ];
-});

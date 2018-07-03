@@ -12,7 +12,7 @@ class HomeController extends Controller {
 
 
 	public function index(Request $request){
-		$categories=Category::where("parent",0)->with("Relations.Posts")->get();
+		$categories=Category::with('posts')->get();
 		return view('front.index',["categories"=>$categories]);
 	}
 

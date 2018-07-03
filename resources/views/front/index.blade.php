@@ -26,12 +26,12 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 mt-2">
 						<img src="{{url('images/esewa.gif')}}" class="w-100" height="100">		
 					</div>
 				</div> 
 				<div class="row">
-				@include('front.category.lo.3rd',["data"=>$categories[10]])
+				@include('front.category.lo.3rd',["data"=>$categories[3]])
 				</div>
 				@foreach($categories as $key=> $category)
 				@if($key==1)
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 					</div>
-					@if(count($category->relations)>0)
+					@if(count($category->posts)>0)
 					@include('front.category',[
 					'category' => $category,
 					'i'=>$key ])

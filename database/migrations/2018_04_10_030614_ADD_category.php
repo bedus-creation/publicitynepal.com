@@ -14,8 +14,7 @@ class ADDCategory extends Migration
     public function up()
     {
         Schema::table("categories",function(Blueprint $table){
-            $table->tinyInteger("order")->nullable();
-            $table->tinyInteger("display")->default(1); 
+            $table->tinyInteger("order")->nullable()->default(0);
             // Default Show
         });
     }
@@ -28,7 +27,7 @@ class ADDCategory extends Migration
     public function down()
     {
         Schema::table("categories",function(Blueprint $table){
-            $table->dropColumn(['order','display']);
+            $table->dropColumn(['order']);
         });
     }
 }

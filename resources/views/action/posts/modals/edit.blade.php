@@ -27,7 +27,7 @@
 				</div>
 				<div class="form-group">
 					<label>Select Categories</label>
-					<input id="categories" class="form-control" type="text" name="categories"  aria-expanded="false"/>
+					<input id="categories" class="form-control" type="text" value="{{json_encode($selected)}}" name="categories"  aria-expanded="false"/>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">

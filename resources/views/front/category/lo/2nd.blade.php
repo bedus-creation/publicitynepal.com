@@ -76,18 +76,18 @@
     <div class="col-md-9 mt-4">
         <div class="row">
             <div class="col-md-6 pt-0 mb-3" style="padding:0 5px">    
-            @if(count($news->relations)>0)
+            @if(count($news->posts)>0)
                 <div class="card border-0 l-n-h" style="background:#fafafa;">	
-                    <a href ="{{url('news'.'/'.$news->relations[0]->posts->id)}}" class="">
+                    <a href ="{{url('news'.'/'.$news->posts[0]->id)}}" class="">
                         <div class="card-block">
                             <p class="lnt" >
-                                {{$news->relations[0]->posts->title}}
+                                {{$news->posts[0]->title}}
                             </p>
                         </div>
-                        <div style="background:url('{{$news->relations[0]->posts->featured_photo}}')" class="ig8">
+                        <div style="background:url('{{$news->posts[0]->featured_photo}}')" class="ig8">
                         </div>
                         <div class="card-footer">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! \Str::limit(strip_tags($news->relations[0]->posts->content), $limit = 250, $end = '....') !!}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! \Str::limit(strip_tags($news->posts[0]->content), $limit = 250, $end = '....') !!}
                         </div>
                     </a>
                 </div>
@@ -113,17 +113,17 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        @if(count($tab1->relations)>0)
-                        @foreach($tab1->relations->slice(0,2) as $item)
-                        <a href="{{url('/news/'.$item->posts->id)}}">
+                        @if(count($tab1->posts)>0)
+                        @foreach($tab1->posts->slice(0,2) as $item)
+                        <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="lnt24">
-                                {{$item->posts->title}}
+                                {{$item->title}}
                             </div>
                             <div class="media">
-                                <div class="mi4" style="background:url('{{$item->posts->featured_photo}}');" ></div>
+                                <div class="mi4" style="background:url('{{$item->featured_photo}}');" ></div>
                                 <div class="media-body m-1">
-                                    {!! \Str::limit(strip_tags($item->posts->content), $limit = 150, $end = '....') !!}
+                                    {!! \Str::limit(strip_tags($item->content), $limit = 150, $end = '....') !!}
                                 </div>
                             </div>
                         </div>
@@ -133,17 +133,17 @@
                         @endif
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        @if(count($tab2->relations)>0)
-                        @foreach($tab2->relations->slice(0,6) as $key=> $item)
+                        @if(count($tab2->posts)>0)
+                        @foreach($tab2->posts->slice(0,6) as $key=> $item)
                         <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
                                     {{ $key+1}} .    
                                 </div>
-                                <div class="mi2" style="background:url('{{$item->posts->featured_photo}}');" ></div>
+                                <div class="mi2" style="background:url('{{$item->featured_photo}}');" ></div>
                                 <div class="media-body m-1 lnt18">
-                                    {{$item->posts->title}}
+                                    {{$item->title}}
                                 </div>
                             </div>
                         </div>
@@ -153,17 +153,17 @@
                         @endif
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        @if(count($tab3->relations)>0)
-                        @foreach($tab3->relations->slice(0,6) as $key=> $item)
+                        @if(count($tab3->posts)>0)
+                        @foreach($tab3->posts->slice(0,6) as $key=> $item)
                         <a href="{{url('/news/'.$item->id)}}">
                         <div class="">
                             <div class="media">
                                 <div style="padding:10px;">
                                     {{ $key+1}} .    
                                 </div>
-                                <div class="mi2" style="background:url('{{$item->posts->featured_photo}}');" ></div>
+                                <div class="mi2" style="background:url('{{$item->featured_photo}}');" ></div>
                                 <div class="media-body m-1 lnt18">
-                                    {{$item->posts->title}}
+                                    {{$item->title}}
                                 </div>
                             </div>
                         </div>
@@ -177,23 +177,23 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                @if(count($news->relations)>0)
+                @if(count($news->posts)>0)
                 <div class="row card-group">
-                    @foreach($news->relations->slice(1, 6) as $key=> $item)
+                    @foreach($news->posts->slice(1, 6) as $key=> $item)
                     <div class="col-md-4 pt-0 mb-3" style="padding:0 5px">
                         <div class="card h-100  border-0" style="background:#fafafa;">	
-                            <a href ="{{url('news'.'/'.$item->posts->id)}}" class="">
+                            <a href ="{{url('news'.'/'.$item->id)}}" class="">
                                 <div class="card-block">
                                     <p class="content pt-4" >
-                                        {{$item->posts->title}}
+                                        {{$item->title}}
                                         <br>
                                         <small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
-                                            $item->posts->created_at->diffForHumans()}}
+                                            $item->created_at->diffForHumans()}}
                                         </small>
                                     </p>
                                 </div>
                                 @if($key<4)
-                                <div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
+                                <div style="background:url('{{$item->featured_photo}}')" class="ig4">
                                 </div>
                                 @endif
                             </a>
@@ -206,5 +206,6 @@
         </div>
     </div>
     <div class="col-md-3">
+
     </div>
 </div>

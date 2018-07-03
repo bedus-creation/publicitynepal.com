@@ -38,11 +38,27 @@
                     </div>
                 </a>
                 <div class="dropdown-menu bg-sidebar border p-0" aria-labelledby="dropdownMenu2">
-                    <a  href="{{url('admin/category/create')}}" class="dropdown-item" type="button">
+                    <a  href="{{url('admin/categories/create')}}" class="dropdown-item" type="button">
                         Create Categories
                     </a>
-                    <a  href="{{url('admin/category/all')}}" class="dropdown-item" type="button">
+                    <a  href="{{url('admin/categories')}}" class="dropdown-item" type="button">
                         ALL Categories
+                    </a>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <a class="d-flex flex-row justify-content-start" data-toggle="dropdown">
+                    <div class=""><i class="fa fa-flask"></i></div>
+                    <div class="pl-3" style="cursor: pointer;">
+                        Advertisement
+                    </div>
+                </a>
+                <div class="dropdown-menu bg-sidebar border p-0" aria-labelledby="dropdownMenu2">
+                    <a  href="{{url('admin/advertisements/create')}}" class="dropdown-item" type="button">
+                        Add Advertisement
+                    </a>
+                    <a  href="{{url('admin/advertisements')}}" class="dropdown-item" type="button">
+                        ALL Advertisement
                     </a>
                 </div>
             </li>

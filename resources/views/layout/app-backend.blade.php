@@ -15,18 +15,33 @@
     }
     .bg-sidebar{
         color: #fff;
-        background-color:#245336;
+        background-color:#115f9c;
     }
     #sidebar li{
-        background-color:#245336;
+        background-color:#115f9c;
     }
     #sidebar a{
         color: #fff;
-        background-color:#245336;
+        background-color:#115f9c;
+    }
+    .sidenav {
+        background-color: #115f9c;
+        top: 0px;
+        height: 100%;
+        width: 20%;
+        z-index: 1;
+        transition: 0.5s;
+        padding-top: 10px;
+        text-align:center;
+        display: block;
+        position:fixed;
+        max-height: 100%;
+        overflow-x: hidden;
     }
     #notification{
         display: none;
     }
+
     .notification{
         padding: 10px;
         top:40px;
@@ -55,20 +70,6 @@
         overflow-x: hidden;
         width: 100%;
         padding: 0 10px 0 10px;
-    }
-    .sidenav {
-        background-color: #245336;
-        top: 0px;
-        height: 100%;
-        width: 20%;
-        z-index: 1;
-        transition: 0.5s;
-        padding-top: 10px;
-        text-align:center;
-        display: block;
-        position:fixed;
-        max-height: 100%;
-        overflow-x: hidden;
     }
     .navbar{
         float: left;

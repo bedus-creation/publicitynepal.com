@@ -1,4 +1,5 @@
 <?php
+
 Route::post('/image',function(){
 	return "this is ok";
 });
@@ -15,12 +16,10 @@ Route::group(['namespace'=>'Backend','middleware'=>['auth','web']],function(){
 Route::group(['prefix'=>'admin','namespace'=>'Backend', 'middleware' => ['auth','web']],function(){
 	Route::get('/','AdminController@index');
 	Route::resource('post', 'PostController');
-	
 
+	Route::resource('categories','CategoryController');
+	Route::resource('advertisements','AdvertisementController');
 
-	Route::get('/category/all','CategoryController@cList');
-	Route::get('/category/create','CategoryController@cForm');
-	Route::post('/category/create','CategoryController@cSave');
 	Route::get("/category/delete/{id}","CategoryController@delete");
 });
 

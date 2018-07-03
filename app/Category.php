@@ -8,11 +8,15 @@ class Category extends Model
 {
     protected $table="categories";
 
+    protected $fillable=[
+        'name','group','bio','avatar','order','slug'
+    ];
+
     /**
      * Access All post related to this category
      */
-    public function Posts(){
-    	return $this->hasMany(\App\Post::class,"category");
+    public function posts(){
+    	return $this->belongsToMany(\App\Post::class);
     }
 
     /**

@@ -41,11 +41,8 @@
 <div id="header">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 p-4">
-				<span style="color:rgb(255,0,0);">Publicity</span>&nbsp;<u style="color:rgb(255,0,0); border-bottom:5px solid;">
-					<span style="color:rgb(0,0,255);">Nepal</span></u>
-				</br>
-				<small class="text-muted">A pure Nepali online News Portal</small>
+			<div class="col-md-4  pt-4 pb-4 p-0">
+				<img class="mb-logo" src="{{url('/images/p5.jpg')}}" width="100%" height="80">
 			</div>
 			<div class="col-md-8 p-4">
 				<img src="{{url('images/nissan.gif')}}" class="w-100">	

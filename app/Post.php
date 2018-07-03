@@ -12,7 +12,7 @@ class Post extends Model
     	'title','user_id','slug','content'
     ];
 
-    public function Category(){
-    	return $this->belongsTo(\App\Category::class);
+    public function categories(){
+    	return $this->belongsToMany(\App\Category::class);
     }
 }

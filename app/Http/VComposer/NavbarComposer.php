@@ -33,7 +33,12 @@ class NavbarComposer
      */
     public function compose(View $view)
     {   
-        $categories=Category::where("parent",0)->get();
+        $categories=Category::where("parent",0)
+            ->where('group','top_menu')
+            ->where('status',true)
+            ->orderBy('order')
+            ->limit(10)
+            ->get();
         $view->with('menus', $categories);
     }
 }

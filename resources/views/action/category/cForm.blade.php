@@ -4,7 +4,7 @@
 @section('content')
 @yield('success-error')
 <div id="postForm" class="mt-4">
-	<form method="Post" action="{{url('admin/category/create')}}">
+	<form method="Post" action="{{url('admin/categories')}}">
 		<div class="form-row">
 			<div class="col-md-6">
 				<div class="form-group">
