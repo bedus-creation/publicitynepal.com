@@ -46,6 +46,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request["slug"]=\Str::slug($request->title);
         $this->validate($request,[
             'title'=>'required',
@@ -64,10 +65,7 @@ class PostController extends Controller
             DB::transaction(function() use ($post,$categories){
                 $post->save();
                 foreach($categories as $item) {
-                    $relation=new Relation;
-                    $relation->posts_id=$post->id;
-                    $relation->category_id=$item;
-                    $relation->save();
+                    $post->categories()->attach($item);
                 }
             });
             $request->session()->flash("success","Post created Successfully");

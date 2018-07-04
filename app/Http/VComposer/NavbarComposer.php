@@ -37,7 +37,7 @@ class NavbarComposer
             ->where('group','top_menu')
             ->where('status',true)
             ->orderBy('order')
-            ->limit(10)
+            ->limit(12)
             ->get();
         $view->with('menus', $categories);
     }
