@@ -64,10 +64,8 @@
 		<div class="container">
 			<div class="row pt-4">
 				<div class="col-md-4 pb-2">
-					<p><strong class="c_name pb-0"><span style="color:rgb(255,0,0);">Publicity</span>
-					<span style="color:rgb(255,0,0); border-bottom:5px solid;">
-						<span style="color:rgb(41,100,160);">Nepal</span>
-					</span> &nbsp;Pvt. Ltd.</strong>
+					<p>
+						<img class="mb-logo" src="{{url('/images/p5.jpg')}}" width="100%" height="80">
 					<div>सूचना विभाग दर्ता नंः ३५१/०७३-७४</div>	
 					</p>
 					<ul class="list-unstyled">
