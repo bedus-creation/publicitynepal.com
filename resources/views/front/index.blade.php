@@ -36,7 +36,7 @@
 				@foreach($categories as $key=> $category)
 				@if($key==1)
 				<div class="row">
-				@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[3],"tab2"=>$categories[8],"tab3"=>$categories[7]])
+				@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[2],"tab2"=>$categories[6],"tab3"=>$categories[7]])
 				</div>
 				@elseif($key!=3 && $key!=10 && $key!=9 && $key!=7)
 				<div>
