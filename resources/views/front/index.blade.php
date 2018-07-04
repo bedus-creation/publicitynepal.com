@@ -31,7 +31,7 @@
 					</div>
 				</div> 
 				<div class="row">
-				@include('front.category.lo.3rd',["data"=>$categories[3]])
+				@include('front.category.lo.3rd',["data"=>$categories[14]])
 				</div>
 				@foreach($categories as $key=> $category)
 				@if($key==1)
