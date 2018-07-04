@@ -1,0 +1,24 @@
+a.media-body{
+    font-family: sans-serif;
+}
+.c-md-3{
+	width:100%;
+}
+@media (min-width: 768px) { 
+	.c-md-3{
+		width: 23%;
+		margin: 1%;
+	}
+}
+@media (min-width: 992px) { 
+	.c-lg-3{
+		width: 23%;
+		margin: 1%;
+	}
+}
+@media (min-width: 1200px) { 
+	.b-xl-3{
+		width: 23%;
+		margin: 1%;
+	}
+}
