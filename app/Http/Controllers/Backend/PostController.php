@@ -6,13 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Action\Post\UpdatePostRequest;
 use Illuminate\Support\Facades\DB;
-use App\Relation;
 use App\Category;
 use App\Post;
 use Auth;
 
 class PostController extends Controller
 {
+    protected $repository;
+
+    public function __construct(Post $posts)
+    {
+        $this->repository=$posts;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -95,25 +102,20 @@ class PostController extends Controller
     public function edit($id)
     {
 
-        $selection=[];
-        
-        $selectedCategory = Relation::select("posts_id", "category_id")->where("posts_id", $id)->get();
-        foreach ($selectedCategory as $item) {
-            $selection[]=$item->category_id;
-        }
-
         try{
-            $data=Post::find($id);
+            $data=Post::with('categories')->find($id);
 
         }catch(\Exception $e){
             return redirect()->back();
         }
 
-        $categories=Category::select(["id","name"])->get();
+        $categories=Category::select(["id","name"])->get();        
 
-        return view('action.posts.modals.edit',["data"=>$data,
-        "selected"=>$selection,
-        "categories"=>json_encode($categories)]);
+        return view('action.posts.modals.edit',[
+            "data"=>$data,
+            "categories"=>json_encode($categories),
+            "selected"=>$data->categories->pluck('id')
+        ]);
     }
 
     /**
@@ -130,18 +132,15 @@ class PostController extends Controller
             $request=$request->merge(['user_id'=>Auth::User()->id,'slug'=>\Str::slug($request->title)]);
             DB::transaction(function() use ($id,$request,$categories){
                 // fillable not working 
-                $post=Post::where('id',$id)
-                ->update($request->except(['_token','_method','files','categories']));
+                $post=Post::with('categories')->find($id);
+                $post->update($request->except(['_token','_method','files','categories']));
                 
                 // Drop All previous relations
-                $dR=Relation::where('posts_id',$id)->delete();
+                $post->categories()->detach();
 
                 // Create New Relations
                 foreach($categories as $item) {
-                    $relation=new Relation;
-                    $relation->posts_id=$id;
-                    $relation->category_id=$item;
-                    $relation->save();
+                    $post->categories()->attach($item);
                 }
             });
             $request->session()->flash("success","Post Updated Successfully");
@@ -159,6 +158,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        
+        if ($this->repository->find($id)) {
+            $this->repository->find($id)->categories()->detach();
+            $this->repository->find($id)->delete();
+            \Session::flash("success", "Data is successfully deleted.");
+        } else {
+            \Session::flash("error", "Something went wrong");
+        }
+        return redirect()->back();
     }
 }
