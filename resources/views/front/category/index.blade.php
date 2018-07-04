@@ -26,7 +26,7 @@
 	</div>
 	<div class="row" style="">
 		<?php 
-		if(count($category->relations)>0){
+		if(count($category->posts)>0){
 			switch ($category->slug) {
 				case 'news':
 				?>

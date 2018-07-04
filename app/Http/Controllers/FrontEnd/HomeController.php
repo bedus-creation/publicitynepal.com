@@ -42,7 +42,7 @@ class HomeController extends Controller {
 		try{
 			$data=Category::where('slug',$category)
 			->with('child')
-			->with('Relations')->first();
+			->with('posts')->first();
 			
 		}catch(\Exception $e){
 			// redirect to error page

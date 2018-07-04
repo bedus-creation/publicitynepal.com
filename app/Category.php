@@ -25,8 +25,4 @@ class Category extends Model
     public function child(){
     	return $this->hasMany(\App\Category::class,"parent")->with('Relations.Posts');
     }
-
-    public function Relations(){
-    	return $this->hasMany(\App\Relation::class,"category_id")->orderBy("id","DESC");
-    }
 }

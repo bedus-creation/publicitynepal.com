@@ -1,15 +1,15 @@
-@foreach($category->relations->slice(0, 8) as $item)
+@foreach($category->posts->slice(0, 8) as $item)
 <div class="c-md-3 mb-3 sdw p-0">
 	<div class="card border-0">	
-		<a href ="{{url('news'.'/'.$item->posts->id)}}" class="la">
-			<div style="background:url('{{$item->posts->featured_photo}}')" class="ig4">
+		<a href ="{{url('news'.'/'.$item->id)}}" class="la">
+			<div style="background:url('{{$item->featured_photo}}')" class="ig4">
 			</div>
 			<div class="card-block">
 				<p class="content pt-4" >
-					{{$item->posts->title}}
+					{{$item->title}}
 					<br>
 					<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
-						$item->posts->created_at->diffForHumans()}}
+						$item->created_at->diffForHumans()}}
 					</small>
 				</p>
 			</div>
