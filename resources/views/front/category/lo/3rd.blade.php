@@ -16,11 +16,13 @@
         color: red;
     }
 </style>
+@if(count($data->posts)>0)
 <div class="col-md-12 mc text-center">
     <a  class="topl d-none d-md-block" href="{{url('news/'.$data->posts[0]->id)}}">
         {{$data->posts[0]->title}}
     </a>
 </div>
+@endif
 @foreach($data->posts->slice(0, 4) as $item)
 <div class="c-md-3 mb-3 sdw">
 	<div class="card border-0">	
