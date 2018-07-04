@@ -42,7 +42,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4  pt-4 pb-4 p-0">
-				<img class="mb-logo" src="{{url('/images/p5.jpg')}}" width="100%" height="80">
+				<img class="mb-logo" src="{{url('/images/p1.jpg')}}" width="100%" height="80">
 			</div>
 			<div class="col-md-8 p-4">
 				<img src="{{url('images/nissan.gif')}}" class="w-100">	
