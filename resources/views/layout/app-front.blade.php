@@ -58,6 +58,18 @@
 			font-size: 24px;
 			color: #2964a0;
 		}
+		.content{
+			text-align: center;
+			padding: 0 10px;
+			font-family: 'Eczar', serif;
+			
+		}
+		.c_title{
+			font-weight: bold;
+			font-size: 1.4rem;
+			line-height: 1.2;
+			color: #2964a0;
+		}
 	</style>
 <footer>
 	<div id="footer-top">

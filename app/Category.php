@@ -16,7 +16,7 @@ class Category extends Model
      * Access All post related to this category
      */
     public function posts(){
-    	return $this->belongsToMany(\App\Post::class);
+    	return $this->belongsToMany(\App\Post::class)->orderBy('id','DESC');
     }
 
     /**

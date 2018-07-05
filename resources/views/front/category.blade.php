@@ -43,7 +43,7 @@
 							<div style="background:url('{{$item->featured_photo}}'" class="post-list-image">
 							</div>
 							<div class="media-body">
-								<h5 class="content">
+								<h5 class="m_title">
 									{{substr($item->title,0,45)}}
 									<br>
 									<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
@@ -68,7 +68,7 @@
 					</div>
 					<div class="card-block">
 						<p class="content pt-4" >
-							{{$item->title}}
+							<span class="c_title">{{$item->title}}</span>
 							<br>
 							<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
 								$item->created_at->diffForHumans()}}
@@ -82,59 +82,3 @@
 	</div>
 	@endif
 </div>
-<style type="text/css">
-#category a{
-	text-decoration: none;
-}
-.n-title{
-	padding: 5px 10px;
-	font-family: 'Poppins', sans-serif;
-	font-style: bold;
-	font-size: 30px;
-	line-height: 1.8;
-}
-.sdw{
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.post-list-image{
-	width: 11rem;
-	height: 100px;
-	background-size: cover !important;
-	background-position: center;
-}
-.ig4{
-	height: 150px;
-	background-size:cover !important;
-	background-position: center center !important; 
-}
-.post-image{
-	height: 24rem;
-	width: 100%;
-	background-size:cover !important;
-	background-position: center center !important; 
-}
-.content{
-	text-align: center;
-	padding: 0 10px;
-	font-family: 'Eczar', serif;
-	font-style: bold;
-	font-size: 20px;
-	line-height: 1.4;
-}
-.carousel-caption{
-	background: rgba(0,0,0,0.8);
-}
-@media screen and (max-width: 768px){
-	.post-image{
-		height: 150px;
-		width: 100%;
-		background-size:cover !important;
-		background-position: center center !important; 
-	}
-	.n-title{
-		font-size: 20px;
-		line-height: 1.3;
-	}
-
-}
-</style>

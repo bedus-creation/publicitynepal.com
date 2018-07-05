@@ -6,7 +6,7 @@
 			</div>
 			<div class="card-block">
 				<p class="content pt-4" >
-					{{$item->title}}
+					<span class="c_title">{{$item->title}}</span>
 					<br>
 					<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
 						$item->created_at->diffForHumans()}}
@@ -28,7 +28,7 @@ a:hover {
 	text-align: center;
 	font-size: 20px;
 }
-.sdw{
+.sdw:hover{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

@@ -30,9 +30,9 @@
         text-decoration: none;  
     }
     .card-footer{
-        line-height: 1.5;
+        line-height: 1.4;
         text-align: justify;
-        font-size:16px;
+        font-size:18px;
         font-family: 'Eczar', serif;
         padding: 20px 15px;
     }
@@ -185,7 +185,7 @@
                             <a href ="{{url('news'.'/'.$item->id)}}" class="">
                                 <div class="card-block">
                                     <p class="content pt-4" >
-                                        {{$item->title}}
+                                    <span class="c_title">{{$item->title}}</span>
                                         <br>
                                         <small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
                                             $item->created_at->diffForHumans()}}

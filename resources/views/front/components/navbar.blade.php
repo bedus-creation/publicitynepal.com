@@ -36,6 +36,10 @@
 	a span{
 		font-size: 24px;
 	}
+	.bg-nav{
+		padding: 3px ;
+		background: #2964a0;
+	}
 }
 </style>
 <div id="header">
