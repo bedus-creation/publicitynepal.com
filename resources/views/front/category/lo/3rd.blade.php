@@ -31,7 +31,7 @@
 			</div>
 			<div class="card-block">
 				<p class="content pt-4" >
-					<span class="c_title">{{$item->title}}</span>
+					<span class="c_title">{{str_limit($item->title,70)}}</span>
 					<br>
 					<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
 						$item->created_at->diffForHumans()}}
