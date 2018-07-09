@@ -33,6 +33,7 @@
 	height: 6rem;
 	background-size: cover !important;
 	background-position: center !important;
+	margin-right:10px;
 }
 .ig4{
 	height: 150px;

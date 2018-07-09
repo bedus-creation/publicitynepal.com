@@ -33,7 +33,7 @@
 		"@type": "NewsArticle",
 		"mainEntityOfPage": {
 			"@type": "WebPage",
-			"@id": "https://google.com/article"
+			"@id": "{{url()->current()}}"
 		},
 		"headline": "{{str_limit($post->title,100)}}",
 		"image": [
@@ -43,14 +43,14 @@
 		"dateModified": "{{$post->updated_at}}",
 		"author": {
 			"@type": "Person",
-			"name": "Publicity-Nepal"
+			"name": "PublicityNepal"
 		},
 		"publisher": {
 			"@type": "Organization",
-			"name": "Publicity-Nepal",
+			"name": "PublicityNepal Pvt. Ltd.",
 			"logo": {
 				"@type": "ImageObject",
-				"url": "https://google.com/logo.jpg"
+				"url": "{{url('/images/p1.jpg')}}"
 			}
 		},
 		"description": "{{str_limit($post->content,100)}}"
