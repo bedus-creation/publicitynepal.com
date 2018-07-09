@@ -39,8 +39,9 @@ Route::group(['prefix'=>'account','middleware' => ['web']], function () {
 Route::group(['namespace'=>'FrontEnd'],function(){
 
 	Route::get('/', 'HomeController@index');
+	Route::get('/sitemap.xml','SitemapController@index');
+	
 	Route::get('{category}', 'HomeController@category');
 	Route::get('/news/{slug}','HomeController@one');
 
-	Route::get('/sitemap.xml','SitemapController@index');
 });

@@ -1,5 +1,29 @@
 @extends('layout.app-front')
 
+@section('title')
+{{$post->title}}
+@endsection
+
+
+@section('meta')
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
+<meta property="og:type"   content="article" /> 
+<meta property="fb:app_id" content="869009319945356" /> 
+<meta property="og:url"    content="{{url()->current()}}" /> 
+<meta property="og:title"  content="{{$post->title}}" /> 
+<meta property="og:image"  content="{{$post->featured_photo}}" /> 
+<meta property="og:site_name" content="PublicityNepal.com" />
+<meta property="og:description" content="{{str_limit($post->content,100)}}"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:domain" content="{{url('/')}}"/>
+<meta name="twitter:title" property="og:title" content="{{$post->title}}" />
+<meta name="twitter:image" property="og:image" content="{{$post->featured_photo}}"/>
+<meta name="twitter:description" property="og:description" itemprop="description" content="{{str_limit($post->content,100)}}"/>
+
+
+@endsection
+
 @section('content')
 <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 @if($post)
@@ -29,7 +53,7 @@
 				"url": "https://google.com/logo.jpg"
 			}
 		},
-		"description": "{{{$post->content}}}"
+		"description": "{{str_limit($post->content,100)}}"
 	}
 </script>
 <article class="container" id="details">
