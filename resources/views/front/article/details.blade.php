@@ -35,7 +35,7 @@
 			"@type": "WebPage",
 			"@id": "https://google.com/article"
 		},
-		"headline": "{{$post->title}}",
+		"headline": "{{str_limit($post->title,100)}}",
 		"image": [
 		"{{$post->featured_photo}}"
 		],
