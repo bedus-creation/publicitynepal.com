@@ -14,6 +14,8 @@
 <body>
 	@include('front.components.navbar')
 	@yield('content')
+	<div id="app">
+	</div>
 	<style type="text/css">
 		body{
 			/* background:#efefef; */
@@ -155,7 +157,7 @@
   gtag('config', 'UA-106586554-4');
 </script>
 @yield('script')
-<script>
+<script type="text/javascript">
 var ad_idzone = "3060624",
     ad_width = "900",
     ad_height = "250",
