@@ -155,10 +155,9 @@
   gtag('config', 'UA-106586554-4');
 </script>
 @yield('script')
-<script type="text/javascript">
 var ad_idzone = "3060624",
-    ad_width = "100%",
-    ad_height = "60",
+    ad_width = "900",
+    ad_height = "250",
     v_pos = "bottom",
     h_pos = "center";
 </script>
