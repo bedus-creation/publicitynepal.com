@@ -155,5 +155,13 @@
   gtag('config', 'UA-106586554-4');
 </script>
 @yield('script')
+<script type="text/javascript">
+var ad_idzone = "3060620",
+    ad_width = "468",
+    ad_height = "60",
+    v_pos = "top",
+    h_pos = "left";
+</script>
+<script type="text/javascript" src="https://ads.exdynsrv.com/js.php?t=17&idzone=3060620"></script>
 </body>
 </html>
