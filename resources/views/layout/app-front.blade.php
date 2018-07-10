@@ -156,12 +156,12 @@
 </script>
 @yield('script')
 <script type="text/javascript">
-var ad_idzone = "3060620",
+var ad_idzone = "3060624",
     ad_width = "468",
     ad_height = "60",
-    v_pos = "top",
-    h_pos = "left";
+    v_pos = "bottom",
+    h_pos = "center";
 </script>
-<script type="text/javascript" src="https://ads.exdynsrv.com/js.php?t=17&idzone=3060620"></script>
+<script type="text/javascript" src="https://ads.exdynsrv.com/js.php?t=17&idzone=3060624"></script>
 </body>
 </html>
