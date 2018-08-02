@@ -13,13 +13,13 @@
 <meta property="og:title"  content="{{$post->title}}" /> 
 <meta property="og:image"  content="{{$post->featured_photo}}" /> 
 <meta property="og:site_name" content="PublicityNepal.com" />
-<meta property="og:description" content="{{str_limit($post->content,100)}}"/>
+<meta property="og:description" content="{{str_limit(strip_tags($post->content),100)}}"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:domain" content="{{url('/')}}"/>
 <meta name="twitter:title" property="og:title" content="{{$post->title}}" />
 <meta name="twitter:image" property="og:image" content="{{$post->featured_photo}}"/>
-<meta name="twitter:description" property="og:description" itemprop="description" content="{{str_limit($post->content,100)}}"/>
+<meta name="twitter:description" property="og:description" itemprop="description" content="{{str_limit(strip_tags($post->content),100)}}"/>
 
 
 @endsection
@@ -53,7 +53,7 @@
 				"url": "{{url('/images/p1.jpg')}}"
 			}
 		},
-		"description": "{{str_limit($post->content,100)}}"
+		"description": "{{str_limit(strip_tags($post->content),100)}}"
 	}
 </script>
 <article class="container" id="details">
