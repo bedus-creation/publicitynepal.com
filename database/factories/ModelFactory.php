@@ -34,6 +34,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'title'=>$title,
         'slug'=>\Str::slug($title),
         'content'=>$faker->paragraph,
-        'featured_photo'=>$faker->imageUrl(640, 480),
+        'featured_photo'=>"https://loremflickr.com/640/480/all?random=".rand(1,100)
     ];
 });

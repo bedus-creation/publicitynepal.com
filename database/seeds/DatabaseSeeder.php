@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,13 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 1)->create([
-            'email'=>"tmgbedu@gmail.com"
-        ]);
-        $category=factory('App\Category',20)->create();
-        $posts=factory('App\Post',100)->create();
-        foreach ($posts as $post) {
-            $post->categories()->attach(App\Category::inRandomOrder()->first()->id);
+        // factory(App\User::class, 1)->create([
+        //     'email'=>"tmgbedu@gmail.com"
+        // ]);
+        // $category=factory('App\Category',20)->create();
+
+        $categories=Category::all();
+        foreach ($categories as $key =>$item) {
+            $item->posts()->attach(factory('App\Post')->create());
         }
     }
 }

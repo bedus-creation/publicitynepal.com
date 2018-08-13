@@ -2,10 +2,10 @@
 #header {
 	background: rgba(0,0,0,0.03);
 }
-#header span,a span{
+#header span{
 	font-size: 40px;
 	font-weight: bold;
-	font-family: 'Kaushan Script', cursive;
+	font-family: 'Kaushan Script';
 }
 .nav-item{
 	border-left: #3174b8 1px solid;
