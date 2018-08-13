@@ -102,7 +102,9 @@
 				<div class="row">
 				@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[2],"tab2"=>$categories[6],"tab3"=>$categories[7]])
 				</div>
-				@elseif($key!=0 && $key!=3 && $key!=10 && $key!=9 && $key!=7)
+				<div class="row">
+				</div>
+				@elseif($key!=0 && $key!=3 && $key!=10 && $key!=9 && $key!=6 && $key!=5 && $key!=7)
 				<div>
 					<div class="row mt-4">
 						<div class="col-md-12 p-0">
