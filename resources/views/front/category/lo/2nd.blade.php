@@ -117,7 +117,7 @@
                         @foreach($tab1->posts->slice(0,3) as $item)
                         <a href="{{url('/news/'.$item->id)}}">
                         <div class="pl-1 text-justify">
-                            <div class="lnt24">
+                            <div class="c_title lnt24">
                                 {{$item->title}}
                             </div>
                             <div class="media">
