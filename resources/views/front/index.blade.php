@@ -5,10 +5,6 @@
 	.loading  {
 		margin-top: 100px;	
 	}
-	#content .fa{
-		font-size: 30px;
-		color: #2964a0;
-	}
 	.cat-title{
 		font-size:20px;
 		font-weight: bold;

@@ -9,8 +9,6 @@
     }
     .lnt24{
         font-size:24px;
-        text-align: center;
-        padding: 0 10px;
         font-family: 'Eczar', serif;
         font-weight: 600;
         line-height: 1.5;
@@ -58,11 +56,10 @@
         border-bottom: 4px solid red;
     }
     .mi4{
-        margin: 10px;
-        height: 120px;
+        height: 6rem;
+        width: 5rem;
         background-size: cover !important;
         background-position: center !important ;
-        width:140px;
     }
     .mi2{
         margin: 10px;
@@ -70,6 +67,9 @@
         background-size: cover !important;
         background-position: center !important ;
         width:60px;
+    }
+    .c-d-t{
+        font-size: 15px;
     }
 </style>
 <div class="container">
@@ -114,16 +114,17 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         @if(count($tab1->posts)>0)
-                        @foreach($tab1->posts->slice(0,2) as $item)
+                        @foreach($tab1->posts->slice(0,3) as $item)
                         <a href="{{url('/news/'.$item->id)}}">
-                        <div class="">
+                        <div class="pl-1 text-justify">
                             <div class="lnt24">
                                 {{$item->title}}
                             </div>
                             <div class="media">
-                                <div class="mi4" style="background:url('{{$item->featured_photo}}');" ></div>
-                                <div class="media-body m-1">
-                                    {!! \Str::limit(strip_tags($item->content), $limit = 150, $end = '....') !!}
+                                <div class="mi4 mt-2" style="background:url('{{$item->featured_photo}}');" ></div>
+                                <div class="media-body pl-2 mt-2">
+                                    <span class="text-muted c-d-t"><i class="fa fa-calendar c-d-t text-muted pr-2"></i> {{$item->created_at->diffForHumans()}}</span>
+                                    <p>{!! \Str::limit(strip_tags($item->content), $limit = 90, $end = '....') !!}</p>
                                 </div>
                             </div>
                         </div>
