@@ -98,31 +98,40 @@
 				@include('front.category.lo.3rd',["data"=>$categories[9]])
 				</div>
 				@foreach($categories as $key=> $category)
-				@if($key==1)
-				<div class="row">
-				@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[2],"tab2"=>$categories[6],"tab3"=>$categories[7]])
-				</div>
-				<div class="row">
-				</div>
-				@elseif($key!=0 && $key!=3 && $key!=10 && $key!=9 && $key!=6 && $key!=5 && $key!=7)
-				<div>
-					<div class="row mt-4">
-						<div class="col-md-12 p-0">
-							<div class="card-header cat-title d-flex flex-row justify-content-between">
-								<div>
-									{{$category->name}}
-								</div>
-								<div>
-									<a href="{{url($category->slug)}}">See All</a>
+					@if($key==1)
+					<div class="row">
+					@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[2],"tab2"=>$categories[6],"tab3"=>$categories[7]])
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							@include('front.category.lo.4th',['data'=>$categories[4]])
+						</div>
+						<div class="col-md-4">
+							@include('front.category.lo.4th',['data'=>$categories[8]])
+						</div>
+						<div class="col-md-4">
+							@include('front.category.lo.4th',['data'=>$categories[11]])
+						</div>
+					</div>
+					@elseif($key!=4 && $key!=8 && $key!=11 && $key!=0 && $key!=2 && $key!=3 && $key!=10 && $key!=6 && $key!=5 && $key!=7)
+					<div>
+						<div class="row mt-4">
+							<div class="col-md-12 p-0">
+								<div class="card-header cat-title d-flex flex-row justify-content-between">
+									<div>
+										{{$category->name}}
+									</div>
+									<div>
+										<a href="{{url($category->slug)}}">See All</a>
+									</div>
 								</div>
 							</div>
 						</div>
+						@if(count($category->posts)>0)
+							@include('front.category',['category' => $category,'i'=>$key ])
+						@endif
 					</div>
-					@if(count($category->posts)>0)
-						@include('front.category',['category' => $category,'i'=>$key ])
 					@endif
-				</div>
-				@endif
 				@endforeach
 			</div>
 		</div>
