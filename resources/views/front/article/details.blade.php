@@ -56,54 +56,56 @@
 		"description": "{{str_limit(strip_tags($post->content),100)}}"
 	}
 </script>
-<article class="container" id="details">
-	<div class="row">
-		<div class="col-md-9">
-			<div class="card border-0">
-				<div class="card-header">
-					{{$post->title}}
-				</div>
-				<div class="d-flex justify-content-start">
-					<div class="p-2">
-						<div class="fb_sh_d">
-							<div>
-								<span id="fb-share-count">0</span>
-								<p> Shares </p>
+<section style="background:#f7f7f7">
+	<article class="container" id="details">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="card border-0">
+					<div class="card-header">
+						{{$post->title}}
+					</div>
+					<div class="d-flex justify-content-start">
+						<div class="p-2">
+							<div class="fb_sh_d">
+								<div>
+									<span id="fb-share-count">0</span>
+									<p> Shares </p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="fb-share p-2 ">
-						<a href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&app_id=1622291221319152&sdk=joey&u={{url()->current()}}&display=popup&ref=plugin&src=share_button" 
-						onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" style="background: #3B5998; width: 100px;" class="btn "><i class="fa fa-facebook"></i></a>
-					</div>
-					<div class="fb-share p-2 ">
-							<a
-								href="https://twitter.com/intent/tweet?text={{$post->title.' '.url()->current()}}" style="background: #55ACEE;" class="btn text-center w-100"
-								onclick="return !window.open(this.href, 'Twitter', 'width=640,height=580')"
-								>
-								<i class="fa fa-twitter"></i>
+						<div class="fb-share p-2 ">
+							<a href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&app_id=1622291221319152&sdk=joey&u={{url()->current()}}&display=popup&ref=plugin&src=share_button" 
+							onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" style="background: #3B5998; width: 100px;" class="btn "><i class="fa fa-facebook"></i></a>
+						</div>
+						<div class="fb-share p-2 ">
+								<a
+									href="https://twitter.com/intent/tweet?text={{$post->title.' '.url()->current()}}" style="background: #55ACEE;" class="btn text-center w-100"
+									onclick="return !window.open(this.href, 'Twitter', 'width=640,height=580')"
+									>
+									<i class="fa fa-twitter"></i>
+								</a>
 							</a>
-						</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<img class="card-img-top"
-			src="{{$post->featured_photo}}" 
-			/>
-			<div class="card-text">
-				<span class="d-c">{!!$post->content!!}</span>
-			</div>
+				<img class="card-img-top"
+				src="{{$post->featured_photo}}" 
+				/>
+				<div class="card-text">
+					<span class="d-c">{!!$post->content!!}</span>
+				</div>
 
-			<div class="alert alert-light">
-				<div id="fb-root"></div>
-				<div class="fb-comments" data-href="{{url()->current()}}" data-width="100%"  data-numposts="5"></div>
+				<div class="alert alert-light">
+					<div id="fb-root"></div>
+					<div class="fb-comments" data-href="{{url()->current()}}" data-width="100%"  data-numposts="5"></div>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-3">
+			<div class="col-md-3">
+			</div>
 		</div>
 	</div>
+	</article>
 </div>
-</article>
 @else
 
 

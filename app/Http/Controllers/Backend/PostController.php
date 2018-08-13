@@ -132,7 +132,7 @@ class PostController extends Controller
             $request=$request->merge(['user_id'=>Auth::User()->id,'slug'=>\Str::slug($request->title)]);
             DB::transaction(function() use ($id,$request,$categories){
                 // fillable not working 
-                $post=Post::with('categories')->find($id);
+                $post=Post::find($id);
                 $post->update($request->except(['_token','_method','files','categories']));
                 
                 // Drop All previous relations
