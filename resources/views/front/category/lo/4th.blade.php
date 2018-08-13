@@ -13,8 +13,8 @@
             <div class="">
                 <div class="media">
                     <div class="mi4" style="background:url('{{$item->featured_photo}}');" ></div>
-                    <div class="media-body pl-2 lnt20">
-                        <p class="pb-0">{{$item->title}}</p>
+                    <div class="media-body pl-2">
+                        <p class="mb-0 pb-1 c_title" style="font-size:16px;">{{$item->title}}</p>
                         <span class="text-muted c-d-t"><i class="fa fa-calendar c-d-t text-muted pr-2"></i> {{$item->created_at->diffForHumans()}}</span>
                     </div>
                 </div>
