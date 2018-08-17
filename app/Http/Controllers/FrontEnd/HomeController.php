@@ -11,7 +11,9 @@ use App\Advertisement;
 class HomeController extends Controller {
 
 	public function index(Request $request){
-		$categories=Category::whereHas('posts')->with('posts')
+		$categories=Category::whereHas('posts',function($query){
+			$query->orderBy('id','desc');
+		})->with('posts')
 			->orderBy('order','asc')->get();
 		$advertisements=Advertisement::where('page','home')
 			->orderBy('order','asc')->get();

@@ -85,7 +85,7 @@
 		<div class="col-md-12">
 			<div id="content" class="container pl-0 pr-0">
 				<div class="row">
-				@include('front.category.lo.3rd',["data"=>$categories[7]])
+				@include('front.category.lo.3rd',["data"=>$categories[0]])
 				</div>
 				@foreach($categories as $key=> $category)
 					@if($key==1)
