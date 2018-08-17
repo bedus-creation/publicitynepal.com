@@ -21,6 +21,7 @@
 		<thead>
 			<tr>
 				<th>Name</th>
+				<th>Page</th>
 				<th>Redirection Url</th>
 				<th>Image</th>
 				<th>Order</th>
@@ -30,6 +31,7 @@
 		<tfoot>
 			<tr>
 				<th>Name</th>
+				<th>Page</th>
 				<th>Redirection Url</th>
 				<th>Image</th>
 				<th>Order</th>
@@ -40,8 +42,9 @@
 			@foreach($ads as $item)
 			<tr>
 				<td>{{$item->name}}</td>
+				<td>{{$item->page}}</td>
 				<td>{{$item->url}}</td>
-				<td style="width:15%;">
+				<td style="width:10%;">
 					<img src="{{$item->cover}}" class="img-fluid">
 				</td>
 				<td class="text-center">{{$item->order}}</td>

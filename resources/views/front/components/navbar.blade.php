@@ -49,7 +49,9 @@
 				<img class="mb-logo" src="{{url('/images/p1.jpg')}}" width="100%" height="80">
 			</div>
 			<div class="col-md-8 p-4">
-				<img src="{{url('images/nissan.gif')}}" class="w-100">	
+				@if(isset($advertisement[0]))
+				<img src="{{$advertisement[0]->cover}}" class="w-100">		
+				@endif
 			</div>
 		</div>
 	</div>

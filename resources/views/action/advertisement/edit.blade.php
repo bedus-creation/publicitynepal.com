@@ -8,9 +8,10 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="{{url('admin/advertisements')}}">
-        {{csrf_field()}}
-        <div class="row mt-4">
+    <form method="POST" action="{{url('admin/advertisements/'.$advertisement->id)}}">
+        @method('PUT')
+        @csrf
+        <div class="row mt-4 mb-4">
             <div class="col-md-12">
                 @yield('success-error')
             </div>
@@ -20,7 +21,7 @@
                         <label>Advertisement Title</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control" name="name" value="{{$advertisement->name}}">
                     </div>    
                 </div>
             </div>
@@ -31,9 +32,9 @@
                     </div>
                     <div class="col-md-8">
                         <select name="page" class="form-control">
-                            <option value="home">Home Page</option>
-                            <option value="category">Category Page</option>
-                            <option value="news">News Page</option>
+                            <option value="home" {{$advertisement->page=='home' ? 'selected':'' }}>Home Page</option>
+                            <option value="category" {{$advertisement->page=='category' ? 'selected':'' }}>Category Page</option>
+                            <option value="news" {{$advertisement->page=='news' ? 'selected':'' }}>News Page</option>
                         </select>
                     </div>    
                 </div>
@@ -44,7 +45,7 @@
                         <label>Advertisement Order </label>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" name="order" class="form-control">
+                        <input type="number" name="order" class="form-control" value="{{$advertisement->order}}">
                     </div>     
                 </div>
             </div>
@@ -54,7 +55,7 @@
                         <label>Redirection Url</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" name="url" class="form-control">
+                        <input type="text" name="url" class="form-control" value="{{$advertisement->url}}">
                     </div>    
                 </div>
             </div>
@@ -66,11 +67,13 @@
                     </div>
                     <div class="col-md-8">
                         <input type="hidden" name="cover"
-                        value="{{old('cover')}}">
+                        value="{{$advertisement->cover}}">
                         <div class="btn btn-secondary form-control" id="cover">
                             set Picture
                         </div>
-                        <span id="cover-image"></span>
+                        <span id="cover-image">
+                            <img src="{{$advertisement->cover}}" class="img-fluid">
+                        </span>
                     </div>
                 </div>
             </div>  

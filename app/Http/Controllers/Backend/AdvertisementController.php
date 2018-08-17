@@ -79,7 +79,8 @@ class AdvertisementController extends Controller
      */
     public function update(Request $request, Advertisement $advertisement)
     {
-        //
+        $advertisement->update($request->all());
+        return redirect()->back()->with('success','Advertisement Is Updated');
     }
 
     /**
