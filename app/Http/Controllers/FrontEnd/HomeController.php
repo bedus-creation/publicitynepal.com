@@ -12,7 +12,8 @@ class HomeController extends Controller {
 
 
 	public function index(Request $request){
-		$categories=Category::with('posts')->get();
+		$categories=Category::whereHas('posts')->with('posts')
+			->get();
 		return view('front.index',["categories"=>$categories]);
 	}
 
