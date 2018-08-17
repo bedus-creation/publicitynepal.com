@@ -6,15 +6,16 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use App\Relation;
+use App\Advertisement;
 
 class HomeController extends Controller {
-
-
 
 	public function index(Request $request){
 		$categories=Category::whereHas('posts')->with('posts')
 			->orderBy('order','asc')->get();
-		return view('front.index',["categories"=>$categories]);
+		$advertisements=Advertisement::where('page','home')
+			->orderBy('order','asc')->get();
+		return view('front.index',["categories"=>$categories,"advertisement"=>$advertisements]);
 	}
 
 

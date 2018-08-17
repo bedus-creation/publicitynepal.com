@@ -85,16 +85,6 @@
 		<div class="col-md-12">
 			<div id="content" class="container pl-0 pr-0">
 				<div class="row">
-					<div class="col-md-12 loading text-center d-none">
-						<i  class="fa fa-spinner fa-spin"></i>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 mt-2">
-						<img src="{{url('images/esewa.gif')}}" class="w-100" height="100">		
-					</div>
-				</div> 
-				<div class="row">
 				@include('front.category.lo.3rd',["data"=>$categories[7]])
 				</div>
 				@foreach($categories as $key=> $category)
@@ -103,6 +93,13 @@
 					@include('front.category.lo.2nd',["news"=>$categories[5],"tab1"=>$categories[2],"tab2"=>$categories[6],"tab3"=>$categories[7]])
 					</div>
 					<div class="row">
+						<div class="col-md-12">
+							@if(isset($advertisement[7]))
+							<img src="{{$advertisement[7]->cover}}" class="w-100" style="height:100px;">		
+							@endif
+						</div>
+					</div>
+					<div class="row mt-1">
 						<div class="col-md-4">
 							@include('front.category.lo.4th',['data'=>$categories[4]])
 						</div>
@@ -111,6 +108,13 @@
 						</div>
 						<div class="col-md-4">
 							@include('front.category.lo.4th',['data'=>$categories[11]])
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 mt-1">
+							@if(isset($advertisement[8]))
+							<img src="{{$advertisement[8]->cover}}" class="w-100" style="height:100px;">		
+							@endif
 						</div>
 					</div>
 					@elseif($key!=4 && $key!=8 && $key!=11 && $key!=0 && $key!=2 && $key!=3 && $key!=10 && $key!=6 && $key!=5 && $key!=7)
