@@ -95,7 +95,7 @@
 					</div>
 				</div> 
 				<div class="row">
-				@include('front.category.lo.3rd',["data"=>$categories[9]])
+				@include('front.category.lo.3rd',["data"=>$categories[7]])
 				</div>
 				@foreach($categories as $key=> $category)
 					@if($key==1)

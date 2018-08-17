@@ -2,6 +2,40 @@
 
 All notable changes of the PHPUnit 6.5 release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## [6.5.10] - 2018-08-03
+
+### Fixed
+
+* Fixed [#3209](https://github.com/sebastianbergmann/phpunit/issues/3209): `Test::run()` and `TestCase::run()` interface contradiction
+* Fixed [#3218](https://github.com/sebastianbergmann/phpunit/issues/3218): `prefix` attribute for `directory` node missing from `phpunit.xml` XSD
+* Fixed [#3225](https://github.com/sebastianbergmann/phpunit/issues/3225): `coverage-php` missing from `phpunit.xsd`
+
+## [6.5.9] - 2018-07-03
+
+### Fixed
+
+* Fixed [#3142](https://github.com/sebastianbergmann/phpunit/issues/3142): Method-level annotations (`@backupGlobals`, `@backupStaticAttributes`, `@errorHandler`, `@preserveGlobalState`) do not override class-level annotations
+
+## [6.5.8] - 2018-04-10
+
+### Fixed
+
+* Fixed [#2830](https://github.com/sebastianbergmann/phpunit/issues/2830): `@runClassInSeparateProcess` does not work for tests that use `@dataProvider`
+
+## [6.5.7] - 2018-02-26
+
+### Fixed
+
+* Fixed [#2974](https://github.com/sebastianbergmann/phpunit/issues/2974): JUnit XML logfile contains invalid characters when test output contains binary data
+
+## [6.5.6] - 2018-02-01
+
+### Fixed
+
+* Fixed [#2236](https://github.com/sebastianbergmann/phpunit/issues/2236): Exceptions in `tearDown()` do not affect `getStatus()`
+* Fixed [#2950](https://github.com/sebastianbergmann/phpunit/issues/2950): Class extending `PHPUnit\Framework\TestSuite` does not extend `PHPUnit\FrameworkTestCase`
+* Fixed [#2972](https://github.com/sebastianbergmann/phpunit/issues/2972): PHPUnit crashes when test suite contains both `.phpt` files and unconventionally named tests
+
 ## [6.5.5] - 2017-12-17
 
 ### Fixed
@@ -42,6 +76,11 @@ All notable changes of the PHPUnit 6.5 release series are documented in this fil
 * Fixed [#2654](https://github.com/sebastianbergmann/phpunit/issues/2654): Problems with `assertJsonStringEqualsJsonString()`
 * Fixed [#2810](https://github.com/sebastianbergmann/phpunit/pull/2810): Code Coverage for PHPT tests does not work
 
+[6.5.10]: https://github.com/sebastianbergmann/phpunit/compare/6.5.9...6.5.10
+[6.5.9]: https://github.com/sebastianbergmann/phpunit/compare/6.5.8...6.5.9
+[6.5.8]: https://github.com/sebastianbergmann/phpunit/compare/6.5.7...6.5.8
+[6.5.7]: https://github.com/sebastianbergmann/phpunit/compare/6.5.6...6.5.7
+[6.5.6]: https://github.com/sebastianbergmann/phpunit/compare/6.5.5...6.5.6
 [6.5.5]: https://github.com/sebastianbergmann/phpunit/compare/6.5.4...6.5.5
 [6.5.4]: https://github.com/sebastianbergmann/phpunit/compare/6.5.3...6.5.4
 [6.5.3]: https://github.com/sebastianbergmann/phpunit/compare/6.5.2...6.5.3

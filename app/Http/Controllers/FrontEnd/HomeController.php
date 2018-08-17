@@ -13,7 +13,7 @@ class HomeController extends Controller {
 
 	public function index(Request $request){
 		$categories=Category::whereHas('posts')->with('posts')
-			->get();
+			->orderBy('order','asc')->get();
 		return view('front.index',["categories"=>$categories]);
 	}
 

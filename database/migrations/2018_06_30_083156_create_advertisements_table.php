@@ -21,6 +21,7 @@ class CreateAdvertisementsTable extends Migration
             $table->string('cover');
             $table->string('url')->nullable();
             $table->enum('page',['home','category','news'])->nullable();
+            $table->tinyInteger('order')->default(0);
             $table->boolean('status')->default(true);
         });
     }

@@ -17,13 +17,12 @@
 <div id="postList" class="mt-4">
 	@if(count($ads)>0)
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-	<table id="example" class="display" width="100%" cellspacing="0">
+	<table id="example" class="display text-center" width="100%" cellspacing="0">
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Url</th>
-				<th>Parent</th>
-				<th>Category ID</th>
+				<th>Redirection Url</th>
+				<th>Image</th>
 				<th>Order</th>
 				<th>Action</th>
 			</tr>
@@ -31,9 +30,8 @@
 		<tfoot>
 			<tr>
 				<th>Name</th>
-				<th>Url</th>
-				<th>Parent</th>
-				<th>Category ID</th>
+				<th>Redirection Url</th>
+				<th>Image</th>
 				<th>Order</th>
 				<th>Action</th>
 			</tr>
@@ -42,12 +40,13 @@
 			@foreach($ads as $item)
 			<tr>
 				<td>{{$item->name}}</td>
-				<td>{{$item->slug}}</td>
-				<td>{{$item->parent}}</td>
-				<th>{{$item->id}}</th>
-				<th>{{$item->order}}</th>
+				<td>{{$item->url}}</td>
+				<td style="width:15%;">
+					<img src="{{$item->cover}}" class="img-fluid">
+				</td>
+				<td class="text-center">{{$item->order}}</td>
 				<td class="text-center">
-					<a href="{{url('/admin/categories/'.$item->id.'/edit')}}" class="border border-primary">
+					<a href="{{url('/admin/advertisements/'.$item->id.'/edit')}}" class="border border-primary">
 						<i class="text-primary fa fa-pencil"></i>
 					</a>
 					&nbsp;

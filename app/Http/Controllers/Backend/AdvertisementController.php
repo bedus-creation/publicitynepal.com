@@ -33,7 +33,7 @@ class AdvertisementController extends Controller
      */
     public function create()
     {
-        //
+        return view('action.advertisement.create');
     }
 
     /**
@@ -44,7 +44,8 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->repository->create($request->all());
+        return redirect()->back()->with('success','Advertisement is Created');
     }
 
     /**
@@ -66,7 +67,7 @@ class AdvertisementController extends Controller
      */
     public function edit(Advertisement $advertisement)
     {
-        //
+        return view('action.advertisement.edit',compact('advertisement'));
     }
 
     /**

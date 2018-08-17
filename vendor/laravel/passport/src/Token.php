@@ -60,7 +60,7 @@ class Token extends Model
      */
     public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Passport::clientModel());
     }
 
     /**
@@ -101,11 +101,11 @@ class Token extends Model
     /**
      * Revoke the token instance.
      *
-     * @return void
+     * @return bool
      */
     public function revoke()
     {
-        $this->forceFill(['revoked' => true])->save();
+        return $this->forceFill(['revoked' => true])->save();
     }
 
     /**

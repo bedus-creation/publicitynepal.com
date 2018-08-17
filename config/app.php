@@ -167,9 +167,9 @@ return [
         /*
          * Package Service Providers...
          */
-        Barryvdh\Cors\ServiceProvider::class,
+        // Barryvdh\Cors\ServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,  
-        Folklore\GraphQL\ServiceProvider::class,  
+        // Folklore\GraphQL\ServiceProvider::class,  
         App\Providers\ViewComposer::class,
         /*
          * Application Service Providers...
