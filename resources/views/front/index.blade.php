@@ -100,15 +100,21 @@
 						</div>
 					</div>
 					<div class="row mt-1">
+						@if(isset($categories[1]))
 						<div class="col-md-4">
 							@include('front.category.lo.4th',['data'=>$categories[4]])
 						</div>
+						@endif
+						@if(isset($categories[8]))
 						<div class="col-md-4">
 							@include('front.category.lo.4th',['data'=>$categories[8]])
 						</div>
+						@endif
+						@if(isset($categories[11]))
 						<div class="col-md-4">
 							@include('front.category.lo.4th',['data'=>$categories[11]])
 						</div>
+						@endif
 					</div>
 					<div class="row">
 						<div class="col-md-12 mt-1">
@@ -117,7 +123,7 @@
 							@endif
 						</div>
 					</div>
-					@elseif($key!=4 && $key!=8 && $key!=11 && $key!=0 && $key!=2 && $key!=3 && $key!=10 && $key!=6 && $key!=5 && $key!=7)
+					@elseif($key!=1 && $key!=4 && $key!=8 && $key!=11 && $key!=0 && $key!=2 && $key!=3 && $key!=10 && $key!=6 && $key!=5 && $key!=7)
 					<div>
 						<div class="row mt-4">
 							<div class="col-md-12 p-0">

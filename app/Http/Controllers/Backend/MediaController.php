@@ -26,10 +26,13 @@ class MediaController extends Controller
         }
 	}
 	public function getFiles(Request $request){
-		$files = \File::Files('uploads/images');
-		foreach($files as $file) {
-			$name[]=$file->getPath()."/".$file->getFilename();
-		}
-		return response()->json(["data"=>$name]);
+        $files = collect(\File::Files('uploads/images'))
+            ->sortBy(function ($file) {
+                return $file->getCTime();
+            })
+            ->map(function($file){
+                return $file->getPath()."/".$file->getFilename();
+            });
+		return response()->json(["data"=>array_reverse($files->toArray())]);
 	}
 }
