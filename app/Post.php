@@ -21,6 +21,7 @@ class Post extends Model
         return Post::whereHas('categories', function ($query) {
             $tagIds = $this->categories()->pluck('categories.id')->all();
             $query->whereIn('categories.id', $tagIds);
-        })->where('id', '<>', $this->id)->get();
+        })->where('id', '<>', $this->id)
+            ->orderBy('id','desc')->get();
     }
 }
