@@ -32,10 +32,12 @@ class HomeController extends Controller {
 		$post->views+=1;
 		$post->save();
 
+		$posts=$post->relatedPostsByTag();
+
 		$advertisements=Advertisement::where('page','news')
 			->orderBy('order','asc')->get();
 
-		return view('front.article.details',["post"=>$post,'advertisement'=>$advertisements]);
+		return view('front.article.details',["posts"=>$posts,"post"=>$post,'advertisement'=>$advertisements]);
 	}
 
 	/**

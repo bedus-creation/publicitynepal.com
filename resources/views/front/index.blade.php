@@ -21,20 +21,12 @@
 		font-size: 30px;
 		line-height: 1.8;
 	}
-	.sdw:hover{
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
 	.post-list-image{
 		width: 8rem;
 		height: 6rem;
 		background-size: cover !important;
 		background-position: center !important;
 		margin-right:10px;
-	}
-	.ig4{
-		height: 150px;
-		background-size:cover !important;
-		background-position: center center !important; 
 	}
 	.post-image{
 		height: 24rem;
@@ -102,7 +94,7 @@
 					<div class="row mt-1">
 						@if(isset($categories[1]))
 						<div class="col-md-4">
-							@include('front.category.lo.4th',['data'=>$categories[4]])
+							@include('front.category.lo.4th',['data'=>$categories[1]])
 						</div>
 						@endif
 						@if(isset($categories[8]))

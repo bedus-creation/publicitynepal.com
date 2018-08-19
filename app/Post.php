@@ -15,4 +15,12 @@ class Post extends Model
     public function categories(){
     	return $this->belongsToMany(\App\Category::class);
     }
+
+    public function relatedPostsByTag()
+    {
+        return Post::whereHas('categories', function ($query) {
+            $tagIds = $this->categories()->pluck('categories.id')->all();
+            $query->whereIn('categories.id', $tagIds);
+        })->where('id', '<>', $this->id)->get();
+    }
 }

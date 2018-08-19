@@ -108,9 +108,36 @@
 				@endforeach
 			</div>
 		</div>
-	</div>
 	</article>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="c-md-3">
+				<div class="pl-4 pr-4 pt-2 pb-2 c-c-t">Related Article</div>
+			</div>
+		</div>
+		<div class="row">
+			@foreach($posts->slice(0, 8) as $item)
+			<div class="c-md-3 mb-3 sdw">
+				<div class="card border-0 h-100">	
+					<a href ="{{url('news'.'/'.$item->id)}}" class="la">
+						<div style="background:url('{{$item->featured_photo}}')" class="ig4">
+						</div>
+						<div class="card-block">
+							<p class="content pt-4" >
+								<span class="c_title">{{str_limit($item->title,50)}}</span>
+								<br>
+								<small class="text-muted"><i class="fa fa-clock-o text-muted"></i>&nbsp;{{
+									$item->created_at->diffForHumans()}}
+								</small>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			@endforeach
+		</div>
+	</div>
+</section>
 @else
 
 
