@@ -27,15 +27,15 @@ class HomeController extends Controller {
 	 * @param $lug
 	 */
 	public function one(Request $request,$slug){
-		try{
-			$post=Post::where("id",$request->slug)->first();
-			$post->views+=1;
-			$post->save();
-		}catch(\Exception $e){
 
-		}
+		$post=Post::findOrFail($slug);
+		$post->views+=1;
+		$post->save();
 
-		return view('front.article.details',["post"=>$post]);
+		$advertisements=Advertisement::where('page','news')
+			->orderBy('order','asc')->get();
+
+		return view('front.article.details',["post"=>$post,'advertisement'=>$advertisements]);
 	}
 
 	/**

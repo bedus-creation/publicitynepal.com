@@ -100,7 +100,12 @@
 					<div class="fb-comments" data-href="{{url()->current()}}" data-width="100%"  data-numposts="5"></div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 mt-1">
+				@foreach($advertisement->slice(1,6) as $item)
+				<div class="mb-1">
+					<img src="{{$item->cover}}" class="w-100">	
+				</div>	
+				@endforeach
 			</div>
 		</div>
 	</div>
