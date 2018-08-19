@@ -101,7 +101,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 mt-1">
-				@foreach($advertisement->slice(1,6) as $item)
+				@foreach($advertisement->slice(1,9) as $item)
 				<div class="mb-1">
 					<img src="{{$item->cover}}" class="w-100">	
 				</div>	
