@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         factory(App\User::class, 1)->create([
-            'email' => "tmgbedu@gmail.com"
+            'email' => "theoryeducation@gmail.com"
         ]);
         $category = factory('App\Category', 20)->create();
 
