@@ -12,13 +12,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // factory(App\User::class, 1)->create([
-        //     'email'=>"tmgbedu@gmail.com"
-        // ]);
-        // $category=factory('App\Category',20)->create();
+        factory(App\User::class, 1)->create([
+            'email' => "tmgbedu@gmail.com"
+        ]);
+        $category = factory('App\Category', 20)->create();
 
-        $categories=Category::all();
-        foreach ($categories as $key =>$item) {
+        $categories = Category::all();
+        foreach ($categories as $key => $item) {
             $item->posts()->attach(factory('App\Post')->create());
         }
     }
