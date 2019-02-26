@@ -59,7 +59,7 @@
 				<a href="{{url('/')}}"> Bishowghatana.com </a>
 			</div>
 			<div>
-				Design By: बेद
+				Design By:<a href="https://bedramtamang.com.np"> बेद</a>
 			</div>
 		</div>
 	</div>
