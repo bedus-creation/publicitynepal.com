@@ -52,8 +52,15 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer-bottom" class="footer-copyright py-3 text-center">
-		© 2010-2018 Copyright:
-		<a href="{{url('/')}}"> Bishowghatana.com </a>
+	<div id="footer-bottom" class="footer-copyright py-3">
+		<div class="d-flex">
+			<div>
+				© 2010-2018 Copyright:
+				<a href="{{url('/')}}"> Bishowghatana.com </a>
+			</div>
+			<div>
+				Design By: बेद
+			</div>
+		</div>
 	</div>
 </footer>
