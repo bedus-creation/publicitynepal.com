@@ -16,10 +16,10 @@
 						<div class="col-md-4">
 							<p><strong class="c_name pb-0">हाम्रो बारे</strong></p>
 							<ul class="list-unstyled">
-								<li><a href="#"  class="text-muted">प्रयोगका सर्त</a></li>
+								<li><a href="#" class="text-muted">प्रयोगका सर्त</a></li>
 							</ul>
 						</div>
-						<div class="col-md-4">	
+						<div class="col-md-4">
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 		<div class="container d-flex justify-content-between">
 			<div>
 				© 2010-2018 Copyright:
-				<a href="{{url('/')}}"> Bishowghatana.com </a>
+				<a href="{{url('/')}}"> {{url('')}} </a>
 			</div>
 			<div>
 				Design By:<a href="https://bedramtamang.com.np"> बेद</a>
