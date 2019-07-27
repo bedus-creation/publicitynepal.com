@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
@@ -8,16 +9,19 @@ use App\Category;
 use App\Relation;
 use App\Advertisement;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
-	public function index(Request $request){
-		$categories=Category::whereHas('posts',function($query){
-			$query->orderBy('id','desc');
+	public function index(Request $request)
+	{
+		$categories = Category::whereHas('posts', function ($query) {
+			$query->orderBy('id', 'desc');
 		})->with('posts')
-			->orderBy('order','asc')->get();
-		$advertisements=Advertisement::where('page','home')
-			->orderBy('order','asc')->get();
-		return view('front.index',["categories"=>$categories,"advertisement"=>$advertisements]);
+			->orderBy('order', 'asc')->get();
+		dd($categories);
+		$advertisements = Advertisement::where('page', 'home')
+			->orderBy('order', 'asc')->get();
+		return view('front.index', ["categories" => $categories, "advertisement" => $advertisements]);
 	}
 
 
@@ -26,42 +30,44 @@ class HomeController extends Controller {
 	 * @param Illuminate\Http|Request $request 
 	 * @param $lug
 	 */
-	public function one(Request $request,$slug){
+	public function one(Request $request, $slug)
+	{
 
-		$post=Post::findOrFail($slug);
-		$post->views+=1;
+		$post = Post::findOrFail($slug);
+		$post->views += 1;
 		$post->save();
 
-		$posts=$post->relatedPostsByTag();
+		$posts = $post->relatedPostsByTag();
 
-		$advertisements=Advertisement::where('page','news')
-			->orderBy('order','asc')->get();
+		$advertisements = Advertisement::where('page', 'news')
+			->orderBy('order', 'asc')->get();
 
-		return view('front.article.details',["posts"=>$posts,"post"=>$post,'advertisement'=>$advertisements]);
+		return view('front.article.details', ["posts" => $posts, "post" => $post, 'advertisement' => $advertisements]);
 	}
 
 	/**
 	 * Get a Category
 	 */
-	public function category($category){
-		$data=null;
-		try{
-			$data=Category::where('slug',$category)
-			->with('child')
-			->with('posts')->first();
-			
-		}catch(\Exception $e){
+	public function category($category)
+	{
+		$data = null;
+		try {
+			$data = Category::where('slug', $category)
+				->with('child')
+				->with('posts')->first();
+		} catch (\Exception $e) {
 			// redirect to error page
 		}
-		return view('front.category.index',["category"=>$data]);
+		return view('front.category.index', ["category" => $data]);
 	}
 
 
 	/**
 	 *
 	 */
-	public function getMenus(Request $request){
-		$categories=Category::where("parent",0)->get();
-        return response()->json(["categories"=>$categories]);
+	public function getMenus(Request $request)
+	{
+		$categories = Category::where("parent", 0)->get();
+		return response()->json(["categories" => $categories]);
 	}
 }

@@ -55,7 +55,7 @@
 	<div id="footer-bottom" class="footer-copyright py-3">
 		<div class="container d-flex justify-content-between">
 			<div>
-				© 2010-2018 Copyright:
+				© 2010-{{now()->format('Y')}} Copyright:
 				<a href="{{url('/')}}"> {{url('')}} </a>
 			</div>
 			<div>
