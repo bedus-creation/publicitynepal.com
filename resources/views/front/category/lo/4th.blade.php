@@ -8,7 +8,7 @@
             <p class="c_title mb-0 text-justify">{{str_limit($data->posts[0]->title,50,'....')}}</p>
             <small class="text-muted c-d-t"><i class="fa fa-calendar c-d-t text-muted pr-2"></i>
                 {{$data->posts[0]->created_at->diffForHumans()}}</small>
-            <p class="pt-1 text-secondary text-justify">{!! \Str::limit(strip_tags($data->posts[0]->content), $limit =
+            <p class="pt-1  text-justify">{!! \Str::limit(strip_tags($data->posts[0]->content), $limit =
                 90, $end =
                 '....') !!}</p>
         </div>
