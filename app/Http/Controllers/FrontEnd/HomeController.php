@@ -18,7 +18,6 @@ class HomeController extends Controller
 			$query->orderBy('id', 'desc');
 		})->with('posts')
 			->orderBy('order', 'asc')->get();
-		dd($categories);
 		$advertisements = Advertisement::where('page', 'home')
 			->orderBy('order', 'asc')->get();
 		return view('front.index', ["categories" => $categories, "advertisement" => $advertisements]);

@@ -1,46 +1,54 @@
 <style type="text/css">
-#header {
-	background: rgba(0,0,0,0.03);
-}
-#header span{
-	font-size: 40px;
-	font-weight: bold;
-	font-family: 'Kaushan Script';
-}
-.nav-item{
-	border-left: #3174b8 1px solid;
-	border-right: #215181 1px solid;
-	padding-left: 10px;
-	line-height: 30px;
-	padding-right: 10px;
-}
-.fa{
-	font-size: 25px;
-	color:#fff;
-}
-.bg-nav{
-	padding: 0;
-	background: #2964a0;
-}
-.nav-item a{
-	padding-top: 10px;
-	font-weight: bolder;
-	font-size: 20px;
-	font-family: 'Khand', sans-serif;
-	color:#fff !important;
-}
-.nav-link {
-	padding: 0.5rem;
-}
-@media screen and (max-width: 768px){
-	a span{
-		font-size: 24px;
+	#header {
+		background: rgba(0, 0, 0, 0.03);
 	}
-	.bg-nav{
-		padding: 3px ;
+
+	#header span {
+		font-size: 40px;
+		font-weight: bold;
+		font-family: 'Kaushan Script';
+	}
+
+	.nav-item {
+		border-left: #3174b8 1px solid;
+		border-right: #215181 1px solid;
+		padding-left: 10px;
+		line-height: 30px;
+		padding-right: 10px;
+	}
+
+	.fa {
+		font-size: 25px;
+		color: #fff;
+	}
+
+	.bg-nav {
+		padding: 0;
 		background: #2964a0;
 	}
-}
+
+	.nav-item a {
+		padding-top: 10px;
+		font-weight: bolder;
+		font-size: 20px;
+		font-family: 'Khand', sans-serif;
+		color: #fff !important;
+	}
+
+	.nav-link {
+		padding: 0.5rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		a span {
+			font-size: 24px;
+		}
+
+		.bg-nav {
+			padding: 3px;
+			background: #2964a0;
+		}
+	}
 </style>
 <div id="header">
 	<div class="container">
@@ -50,7 +58,7 @@
 			</div>
 			<div class="col-md-8 p-4">
 				@if(isset($advertisement[0]))
-				<img src="{{$advertisement[0]->cover}}" class="w-100">		
+				<img src="{{$advertisement[0]->cover}}" class="w-100 h-100">
 				@endif
 			</div>
 		</div>
@@ -74,8 +82,7 @@
 				</li>
 				@foreach($menus as $item)
 				<li class="nav-item">
-					<a class="nav-link"
-					href="{{url($item->slug)}}">{{$item->name}}</a>
+					<a class="nav-link" href="{{url($item->slug)}}">{{$item->name}}</a>
 				</li>
 				@endforeach
 			</ul>
